@@ -11,12 +11,12 @@ type Props = {
   banner?:any;
 };
 const PageLayout = ({ title, _site, global, children, banner}: Props) => {
-  console.log(banner.url,"Bannerurl")
+  // console.log(banner.url,"Bannerurl")
 
 
   return <>
   <div>
-    <img src={banner.url}/>
+    <img src={banner?.url}/>
   </div>
   </>
 };
