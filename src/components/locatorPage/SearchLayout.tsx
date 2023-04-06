@@ -301,7 +301,7 @@ const SearchLayout = (props: any): JSX.Element => {
               id="search-location-button"
               onClick={Findinput}
             >
-              <span dangerouslySetInnerHTML={{ __html: search_icn }} />
+              <span>Search for stores</span>
             </button>
           </div>
 

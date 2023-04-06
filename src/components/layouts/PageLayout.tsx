@@ -16,7 +16,7 @@ const PageLayout = ({ title, _site, global, children, banner}: Props) => {
 
   return <>
   <div>
-    <img src={banner?.url}/>
+    <img src={banner?.url} style={{width:"100%"}}/>
   </div>
   </>
 };
