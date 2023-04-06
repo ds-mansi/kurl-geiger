@@ -141,7 +141,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   return {
     title: document.c_meta_title
       ? document.c_meta_title
-      : `${document.name} Store of MGM Timber`,
+      : `${document.name} Store of Kurt Geiger`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
@@ -152,7 +152,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Kurt Geiger Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -191,7 +191,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Kurt Geiger Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -229,7 +229,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           name: "twitter:title",
           content: document.c_meta_title
             ? document.c_meta_title
-            : `${document.name} Store of MGM Timber`,
+            : `${document.name} Store of Kurt Geiger`,
         },
       },
       {
@@ -239,7 +239,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find the ${document.name} Timber Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
+              : `Find the ${document.name} Kurt Geiger Store in ${document.address.city}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -261,7 +261,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = `${AnswerExperienceConfig.endpoints.verticalSearch}?experienceKey=${AnswerExperienceConfig.experienceKey}&api_key=${AnswerExperienceConfig.apiKey}&v=20220511&version=${AnswerExperienceConfig.experienceVersion}&locale=${AnswerExperienceConfig.locale}&location=${location}&locationRadius=${AnswerExperienceConfig.locationRadius}&verticalKey=${AnswerExperienceConfig.verticalKey}&limit=4&retrieveFacets=true&skipSpellCheck=false&sessionTrackingEnabled=true&source=STANDARD`;
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=93ed4eb95d481501ecc17410efa52034&v=20181201&resolvePlaceholders=true&entityTypes=location&limit=4`;
   console.log(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()

@@ -34,7 +34,7 @@ const Footer = (props: any) => {
 	<div style={{backgroundColor:"#f2f2f2"}}>
       <div
         className="flex pl-9"
-        style={{ paddingTop: "40px", color: "#333333" }}
+        style={{ paddingTop: "40px", color: "#333333",width: "100%" }}
       >
         <div className="flex" style={{ width: "60%" }}>
           <div>

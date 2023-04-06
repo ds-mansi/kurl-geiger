@@ -244,13 +244,8 @@ const SearchLayout = (props: any): JSX.Element => {
           </ul>
         </div>
       </div>
-      <div className="locator-main">
-        {allowlocation.length > 0 ? (
-          <div className="for-allow">{allowlocation}</div>
-        ) : (
-          ""
-        )}
-        <div className="search-bx">
+
+      <div className="search-bx">
           {/* <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div> */}
@@ -333,6 +328,14 @@ const SearchLayout = (props: any): JSX.Element => {
             />
           </div>
         </div>
+
+      <div className="locator-main">
+        {allowlocation.length > 0 ? (
+          <div className="for-allow">{allowlocation}</div>
+        ) : (
+          ""
+        )}
+
         <div className="mobile-btns">
           <div className="button-bx">
             <a
