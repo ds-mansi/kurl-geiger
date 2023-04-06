@@ -78,6 +78,8 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "displayCoordinate",
       "cityCoordinate",
+      "c_deliveryTime"
+      
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -294,6 +296,7 @@ const Location: Template<ExternalApiRenderData> = ({
     displayCoordinate,
     cityCoordinate,
     name,
+    c_deliveryTime,
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -466,20 +469,23 @@ const Location: Template<ExternalApiRenderData> = ({
             lhead={_site?.c_lowerHeader}
             nav={_site?.c_navbar}
           />
+          <PageLayout global={_site} banner={_site.c_bannerImage}/>
           <div className="container">
             <div className="banner-text banner-dark-bg justify-center text-center">
-              <h1 className="">
-                {name} {name}
+              <h1 className="heading ">
+                {name} 
               </h1>
-              <div className="openClosestatus detail-page closeing-div">
+              {/* <div className="openClosestatus detail-page closeing-div">
                 <OpenClose timezone={timezone} hours={hours} />
-              </div>
+              </div> */}
             </div>
           </div>
           <div className="location-information">
+          {/* {c_deliveryTime} */}
             <Contact
               address={address}
               phone={mainPhone}
+              delivery={c_deliveryTime}
               latitude={
                 yextDisplayCoordinate
                   ? yextDisplayCoordinate.latitude
@@ -494,6 +500,7 @@ const Location: Template<ExternalApiRenderData> = ({
               hours={hours}
               additionalHoursText={additionalHoursText}
             ></Contact>
+            
             {hours ? (
               <div className="map-sec" id="map_canvas">
                 <CustomMap

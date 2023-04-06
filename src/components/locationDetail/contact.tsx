@@ -4,6 +4,7 @@ import Hours from "../commons/hours";
 import woodtexture from "../../images/wood-texture.jpg";
 import mapimage from "../../images/map.svg";
 import Phonesvg from "../../images/phone.svg";
+import Tick from "../../images/tick.svg";
 import Address from "../commons/Address";
 import GetDirection from "../commons/GetDirection";
 import { StaticData } from "../../../sites-global/staticData";
@@ -22,8 +23,10 @@ const Contact = (props: any) => {
     additionalHoursText,
     yextDisplayCoordinate,
     c_storeInfoHeading,
-    c_getDirectionsCTAText
+    c_getDirectionsCTAText,
+    delivery
   } = props;
+  console.log(delivery,"c_deliveryTime")
   return (
     <>
       <div className="address-main-sec">
@@ -52,14 +55,21 @@ const Contact = (props: any) => {
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>
+             
             </div>
+            
           </div>
+          
         ) : (
           ""
         )}
-
+        <div className="flex item-center pt-1">
+            <img src={Tick} width="22" height="22" alt="" />
+            <p style={{paddingLeft:"10px"}}>{delivery}</p>
+            </div>
         <ul className="">
           <li className="button-bx direction-button">
+    
             <GetDirection
               buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
               address={address}
