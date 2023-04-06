@@ -125,7 +125,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 /* left listing */
 .search-bx{@apply  mb-0  z-20 px-4 md:px-0  pt-0 pb-6 text-gray-dark float-left w-full md:w-[30rem] lg:w-[33.6875rem] border-b border-[#d8d8d8];
   padding-left: 25px !important;
-  width: 33%;
+  width: 98%;
 }
 .search-bx button{ @apply float-left mr-0 relative text-white text-xs sm:text-sm }
 .search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
