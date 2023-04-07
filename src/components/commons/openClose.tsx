@@ -186,8 +186,6 @@ export const OpenStausFunctions = {
 
     const statusclass = "";
 
-   
-
     if (openRightNow) {
       // console.log("openRightNow");
 
@@ -199,7 +197,6 @@ export const OpenStausFunctions = {
       } else {
         return (
           <div className={"opendot green-dot"}>
-           
             <div className="hours-info ">
               {" "}
               <span className="font-second-main-font "> Open now - </span>
@@ -227,17 +224,16 @@ export const OpenStausFunctions = {
         return (
           <div className={"closeddot 4"}>
             <div className="red-dot">
-            
               <div className="hours-info ">
-                <span className="font-second-main-font "> Closed - </span>
+                <span className="hours-info font-second-main-font text-[#a6182e]">
+                  {" "}
+                  Closed -{" "}
+                </span>
                 {"Opens at "}
                 <span className="lowercase">
-                  {OpenStausFunctions.formatTime(nextInterval.start).replace(
-                    ":00",
-                    ""
-                  )}
-                </span>
-                {" "}{week[Day]}
+                  {nextInterval.start.replace(" ", ":00")}
+                </span>{" "}
+                {week[Day]}
               </div>
             </div>{" "}
           </div>
@@ -246,15 +242,11 @@ export const OpenStausFunctions = {
         return (
           <div className={"closeddot 3"}>
             <div className="red-dot">
-             
               <div className="hours-info ">
                 <span className="font-second-main-font">Closed - </span>
                 {"Opens at "}
                 <span className="lowercase">
-                  {OpenStausFunctions.formatTime(nextInterval.start).replace(
-                    ":00",
-                    ""
-                  )}
+                  {nextInterval.start.replace(" ", ":00")}
                 </span>
               </div>{" "}
             </div>{" "}
@@ -265,14 +257,13 @@ export const OpenStausFunctions = {
       return (
         <div className="closeddot 2">
           <div className="red-dot">
-           
             <div className="hours-info ">Closed</div>{" "}
           </div>
         </div>
       );
     }
   },
-  getYextTimeWithUtcOffset: (entityUtcOffsetSeconds:number) => {
+  getYextTimeWithUtcOffset: (entityUtcOffsetSeconds: number) => {
     const now = new Date();
     let utcOffset = 0;
     if (entityUtcOffsetSeconds) {
@@ -284,7 +275,7 @@ export const OpenStausFunctions = {
     }
     return now;
   },
-  parseTimeZoneUtcOffset: (timeString:string) => {
+  parseTimeZoneUtcOffset: (timeString: string) => {
     if (!timeString) {
       return 0;
     }
@@ -413,10 +404,8 @@ export default function OpenClose(props: any) {
       ) : props.hours ? (
         //  <div class="closeing-div notHighlight" dangerouslySetInnerHTML={{__html: OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}} />
         <div className="closeing-div notHighlight">
-          {/* {OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}{" "} */}
-          {
-            OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}
-         
+          {OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}{" "}
+          {/* s */}
         </div>
       ) : (
         <div className="closeddot  1">
@@ -435,13 +424,15 @@ export default function OpenClose(props: any) {
                 fill="#ad1e1f"
               />
             </svg>
-            <div className="hours-info font-second-main-font ">Closed</div>{" "}
+            <div className="hours-info font-second-main-font text-[#a6182e] ">
+              Closed
+            </div>{" "}
           </div>
         </div>
       )}
     </>
   );
 }
-// function formatTime(end: any): string {
-//   throw new Error("Function not implemented.");
-// }
+function formatTime(end: any): string {
+  throw new Error("Function not implemented.");
+}

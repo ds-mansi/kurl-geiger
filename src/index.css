@@ -191,7 +191,7 @@ body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
 body .ps__thumb-y{ @apply bg-gray-dark opacity-100 right-1 w-2}
 body .ps__rail-y:hover .ps__thumb-y{ @apply w-2 bg-gray-dark}
 table.day-hrs{  @apply border-none w-full mb-4}
-table.day-hrs td{ @apply   text-right  }
+table.day-hrs td{ @apply   text-left  }
 .storelocation-openCloseTime table.day-hrs{  @apply bg-white xl:max-w-md 2xl:max-w-lg border   mx-auto xl:right-3.5 relative}
 .storelocation-openCloseTime table.day-hrs .dayName{  @apply w-auto}
 .storelocation-openCloseTime table.day-hrs .time-group{  @apply w-full justify-between }
@@ -335,6 +335,9 @@ border: 1px solid black !important;
 .map-section .button-bx .btn.notHighligh{@apply w-full md:w-[48%] bg-white justify-start  border-none text-black underline  }
 .map-section .button-bx .btn + .btn{@apply mt-2 md:mt-0 w-auto ml-2 hover:no-underline}
 .map-section .button-bx .btn:hover svg{@apply !fill-red }
+.map-section .button-bx .btn{
+  background-color: #000000;
+}
 
 .nearby-card .green-dot svg, .nearby-card .red-dot svg{@apply order-2 ml-1 mt-1 }
 

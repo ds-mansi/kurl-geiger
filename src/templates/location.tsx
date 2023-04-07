@@ -31,6 +31,7 @@ import Menu from "../components/locationDetail/Menu";
 import PhotoSlider from "../components/locationDetail/PhotoSlider";
 import PhotoGallery from "../components/locationDetail/PhotoGallery";
 import About from "../components/locationDetail/About";
+import Shopnew from "../components/locationDetail/shopnew"
 import Breadcrumb from "../components/layouts/Breadcrumb";
 import CustomMap from "../components/locationDetail/CustomMap";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
@@ -78,8 +79,10 @@ export const config: TemplateConfig = {
       "yextDisplayCoordinate",
       "displayCoordinate",
       "cityCoordinate",
-      "c_deliveryTime"
-      
+      "c_deliveryTime",
+      "c_shop",
+      "c_shopHead",
+      "c_shoeSlider"
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -297,6 +300,10 @@ const Location: Template<ExternalApiRenderData> = ({
     cityCoordinate,
     name,
     c_deliveryTime,
+    c_shopHead,
+    c_shop,
+    c_shoeSlider
+
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -523,7 +530,10 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             )}
           </div>
-
+                  {/* shop section */}
+            <Shopnew props={c_shopHead} shop={c_shop}/>
+            {/* slider */}
+            <PhotoSlider props={c_shoeSlider}/>
           <div className="nearby-sec">
             <div className="container">
               <div className="sec-title">

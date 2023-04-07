@@ -246,88 +246,88 @@ const SearchLayout = (props: any): JSX.Element => {
       </div>
 
       <div className="search-bx">
-          {/* <div className="location-with-filter">
+        {/* <div className="location-with-filter">
             <h1 className="">{StaticData.FindLocationtext}</h1>
           </div> */}
 
-          <div className="search-field">
-            <FilterSearch
-              ref={filterRef}
-              displaymsg={displaymsg}
-              setDisplaymsg={setDisplaymsg}
-              customCssClasses={{
-                filterSearchContainer: "m-2 w-full",
-                inputElement: "FilterSearchInput pr-[90px]",
-                optionsContainer: "options",
-              }}
-              inputvalue={inputvalue}
-              setSearchInputValue={setInputValue}
-              params={params1}
-              searchOnSelect={true}
-              searchFields={[
-                {
-                  entityType: "location",
-                  fieldApiName: "address.line1",
-                },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.postalCode",
-                },
-                {
-                  entityType: "location",
-                  fieldApiName: "name",
-                },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.city",
-                },
-                {
-                  entityType: "location",
-                  fieldApiName: "address.region",
-                },
-                // {
-                //   entityType: "location",
-                //   fieldApiName: "address.countryCode",
+        <div className="search-field">
+          <FilterSearch
+            ref={filterRef}
+            displaymsg={displaymsg}
+            setDisplaymsg={setDisplaymsg}
+            customCssClasses={{
+              filterSearchContainer: "m-2 w-full",
+              inputElement: "FilterSearchInput pr-[90px]",
+              optionsContainer: "options",
+            }}
+            inputvalue={inputvalue}
+            setSearchInputValue={setInputValue}
+            params={params1}
+            searchOnSelect={true}
+            searchFields={[
+              {
+                entityType: "location",
+                fieldApiName: "address.line1",
+              },
+              {
+                entityType: "location",
+                fieldApiName: "address.postalCode",
+              },
+              {
+                entityType: "location",
+                fieldApiName: "name",
+              },
+              {
+                entityType: "location",
+                fieldApiName: "address.city",
+              },
+              {
+                entityType: "location",
+                fieldApiName: "address.region",
+              },
+              // {
+              //   entityType: "location",
+              //   fieldApiName: "address.countryCode",
 
-                // },
-              ]}
-              handleInputValue={handleInputValue}
-              handleSetUserShareLocation={handleSetUserShareLocation}
-            />
+              // },
+            ]}
+            handleInputValue={handleInputValue}
+            handleSetUserShareLocation={handleSetUserShareLocation}
+          />
 
-            <button
-              className="search-btn"
-              aria-label="Search bar icon"
-              id="search-location-button"
-              onClick={Findinput}
-            >
-              <span>Search for stores</span>
-            </button>
-          </div>
-
-          <div className="fliter-sec">
-            <button
-              className="useMyLocation"
-              title="Search using your current location!"
-              id="useLocation"
-              onClick={onClick}
-            >
-              <span
-                className="icon"
-                dangerouslySetInnerHTML={{ __html: UseMylocationsvg }}
-              />
-
-              <span className="underline hover:no-underline">
-                {" "}
-                {StaticData.Usemylocation}
-              </span>
-            </button>
-
-            <ResultsCount
-              customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
-            />
-          </div>
+          <button
+            className="search-btn"
+            aria-label="Search bar icon"
+            id="search-location-button"
+            onClick={Findinput}
+          >
+            <span>Search for stores</span>
+          </button>
         </div>
+
+        <div className="fliter-sec">
+          <button
+            className="useMyLocation"
+            title="Search using your current location!"
+            id="useLocation"
+            onClick={onClick}
+          >
+            <span
+              className="icon"
+              dangerouslySetInnerHTML={{ __html: UseMylocationsvg }}
+            />
+
+            <span className="underline hover:no-underline">
+              {" "}
+              {StaticData.Usemylocation}
+            </span>
+          </button>
+
+          <ResultsCount
+            customCssClasses={{ container: "mx-2 my-0 text-dark-gray" }}
+          />
+        </div>
+      </div>
 
       <div className="locator-main">
         {allowlocation.length > 0 ? (

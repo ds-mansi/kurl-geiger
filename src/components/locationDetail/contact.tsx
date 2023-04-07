@@ -24,18 +24,26 @@ const Contact = (props: any) => {
     yextDisplayCoordinate,
     c_storeInfoHeading,
     c_getDirectionsCTAText,
-    delivery
+    delivery,
   } = props;
-  console.log(delivery,"c_deliveryTime")
+  console.log(delivery, "c_deliveryTime");
   return (
     <>
       <div className="address-main-sec">
-        <h4 className="box-title">{c_storeInfoHeading?c_storeInfoHeading:"Store Details"}</h4>
+        <h4 className="box-title">
+          {c_storeInfoHeading ? c_storeInfoHeading : "Store Details"}
+        </h4>
 
         <div className="icon-row content-col">
           <div className="icon">
             {" "}
-            <img className=" " src={mapimage} width="20" height="20" alt="mapimage" />
+            <img
+              className=" "
+              src={mapimage}
+              width="20"
+              height="20"
+              alt="mapimage"
+            />
           </div>
           <div className="  address-text notHighlight">
             {address.line1}
@@ -49,29 +57,35 @@ const Contact = (props: any) => {
           <div className="icon-row">
             <div className="icon">
               {" "}
-              <img className=" " src={Phonesvg} width="22" height="22" alt="phonesvg" />
+              <img
+                className=" "
+                src={Phonesvg}
+                width="22"
+                height="22"
+                alt="phonesvg"
+              />
             </div>
             <div className="content-col">
               <a id="address" className=" location-phn" href={`tel:${phone}`}>
                 {phone}
               </a>
-             
             </div>
-            
           </div>
-          
         ) : (
           ""
         )}
         <div className="flex item-center pt-1">
-            <img src={Tick} width="22" height="22" alt="" />
-            <p style={{paddingLeft:"10px"}}>{delivery}</p>
-            </div>
+          <img src={Tick} width="22" height="22" alt="" />
+          <p style={{ paddingLeft: "10px" }}>{delivery}</p>
+        </div>
         <ul className="">
           <li className="button-bx direction-button">
-    
             <GetDirection
-              buttonText={c_getDirectionsCTAText?c_getDirectionsCTAText:StaticData.getDirection}
+              buttonText={
+                c_getDirectionsCTAText
+                  ? c_getDirectionsCTAText
+                  : StaticData.getDirection
+              }
               address={address}
               latitude={latitude}
               longitude={longitude}
@@ -82,7 +96,6 @@ const Contact = (props: any) => {
         <div className="map-sec">
           <CustomMap prop={yextDisplayCoordinate} />
         </div>
-
       </div>
 
       {hours && typeof hours.monday != "undefined" ? (
