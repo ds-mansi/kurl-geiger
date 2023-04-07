@@ -31,7 +31,7 @@ import Menu from "../components/locationDetail/Menu";
 import PhotoSlider from "../components/locationDetail/PhotoSlider";
 import PhotoGallery from "../components/locationDetail/PhotoGallery";
 import About from "../components/locationDetail/About";
-import Shopnew from "../components/locationDetail/shopnew"
+import Shopnew from "../components/locationDetail/shopnew";
 import Breadcrumb from "../components/layouts/Breadcrumb";
 import CustomMap from "../components/locationDetail/CustomMap";
 import BreadCrumbs from "../components/layouts/Breadcrumb";
@@ -82,7 +82,8 @@ export const config: TemplateConfig = {
       "c_deliveryTime",
       "c_shop",
       "c_shopHead",
-      "c_shoeSlider"
+      "c_shoeSlider",
+      "c_holiday",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -302,8 +303,8 @@ const Location: Template<ExternalApiRenderData> = ({
     c_deliveryTime,
     c_shopHead,
     c_shop,
-    c_shoeSlider
-
+    c_shoeSlider,
+    c_holiday,
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -476,19 +477,17 @@ const Location: Template<ExternalApiRenderData> = ({
             lhead={_site?.c_lowerHeader}
             nav={_site?.c_navbar}
           />
-          <PageLayout global={_site} banner={_site.c_bannerImage}/>
+          <PageLayout global={_site} banner={_site.c_bannerImage} />
           <div className="container">
             <div className="banner-text banner-dark-bg justify-center text-center">
-              <h1 className="heading ">
-                {name} 
-              </h1>
+              <h1 className="heading ">{name}</h1>
               {/* <div className="openClosestatus detail-page closeing-div">
                 <OpenClose timezone={timezone} hours={hours} />
               </div> */}
             </div>
           </div>
           <div className="location-information">
-          {/* {c_deliveryTime} */}
+            {/* {c_deliveryTime} */}
             <Contact
               address={address}
               phone={mainPhone}
@@ -507,7 +506,7 @@ const Location: Template<ExternalApiRenderData> = ({
               hours={hours}
               additionalHoursText={additionalHoursText}
             ></Contact>
-            
+
             {hours ? (
               <div className="map-sec" id="map_canvas">
                 <CustomMap
@@ -530,10 +529,39 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             )}
           </div>
-                  {/* shop section */}
-            <Shopnew props={c_shopHead} shop={c_shop}/>
-            {/* slider */}
-            <PhotoSlider props={c_shoeSlider}/>
+          {/* shop section */}
+          <Shopnew props={c_shopHead} shop={c_shop} />
+          <br/>
+          <br/>
+          {/* slider */}
+          <PhotoSlider props={c_shoeSlider} />
+          <br/>
+          <br/>
+          {/* holiday banner */}
+          <div style={{ position: "relative" }}>
+            <img
+              src={c_holiday?.holidayBanner.url}
+              style={{ margin: "auto" }}
+            />
+            <div
+              style={{
+                position: "absolute",
+                bottom: "0",
+                left: "0",
+                right: "0",
+                top:"0",
+                textAlign: "center",
+                paddingTop:"17%"
+              }}
+            >
+              <h2>{c_holiday?.holidayText}</h2>
+              <p>
+                <a href={c_holiday?.holidayCTa?.link}>
+                  {c_holiday?.holidayCTa?.label}
+                </a>
+              </p>
+            </div>
+          </div>
           <div className="nearby-sec">
             <div className="container">
               <div className="sec-title">
@@ -550,7 +578,7 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
             </div>
           </div>
-          <Footer _site={_site} footer={_site?.c_footer}/>
+          <Footer _site={_site} footer={_site?.c_footer} />
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
     </>

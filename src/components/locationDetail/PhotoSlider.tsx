@@ -26,8 +26,20 @@ const PhotoSlider = (props: any) => {
             textAlign: "center",
           }}
         >
-          <p style={{ textTransform: "uppercase" }}>{element?.imgText}</p>
+          <p style={{ textTransform: "uppercase", paddingTop: "10px" }}>
+            {element?.imgText}
+          </p>
         </div>
+      </div>
+      <div className="text-center">
+        <a
+          href={element?.productBrandName?.link}
+          style={{ fontWeight: "bold" }}
+        >
+          {element?.productBrandName?.label}
+        </a>
+        <br />
+        <a href={element?.productName?.link}>{element?.productName?.label}</a>
       </div>
     </SplideSlide>
   ));
