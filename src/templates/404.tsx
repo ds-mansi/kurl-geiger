@@ -73,7 +73,9 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
     return (
       <ul className="m-auto ">
         <li>
-          <p><a href="#">{txt.imgText}</a></p>
+          <p>
+            <a href="#">{txt.imgText}</a>
+          </p>
         </li>
       </ul>
     );
@@ -101,15 +103,17 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
       </ul>
     );
   });
-  const price= _site?.c_globalSlider?.map((pr:any)=>{
-    return(
+  const price = _site?.c_globalSlider?.map((pr: any) => {
+    return (
       <ul className="m-auto">
         <li>
-          <p><a href={pr?.productPrices?.link}>{pr?.productPrices?.label}</a></p>
+          <p>
+            <a href={pr?.productPrices?.link}>{pr?.productPrices?.label}</a>
+          </p>
         </li>
       </ul>
-    )
-  })
+    );
+  });
   return (
     <>
       <Header
@@ -151,7 +155,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
       <div>
         <p className="text-center">Some more drops for you...</p>
         <br />
-        <div style={{marginBottom:"5%"}}>
+        <div style={{ marginBottom: "5%" }}>
           <div className="flex ">{slide}</div>
           <div className="flex bg-[#f7f7f9]">{text}</div>
           <div className="flex ">{name}</div>

@@ -29,7 +29,7 @@ const Header = (props: any) => {
     return (
       <ul>
         <li style={{ paddingRight: "25px" }}>
-          <a href={res.link}>{res.label}</a>
+          <a href={res?.link}>{res?.label}</a>
         </li>
       </ul>
     );
@@ -44,7 +44,7 @@ const Header = (props: any) => {
         <div className="flex m-auto pt-4 px-5 bg-[#f8f6f7]">
           <div className="flex items-center">
             <img
-              src={props.lhead.flagImg.url}
+              src={props?.lhead?.flagImg?.url}
               style={{ height: "20px", paddingRight: "5px" }}
             />
             <img src={headerMap} />
