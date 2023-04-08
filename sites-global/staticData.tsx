@@ -23,7 +23,7 @@ export const StaticData = {
     cantfind_page:"We're really sorry, we can't find the page you're looking for",
     Youcouldtry:"You could try",
     Previuspage:"Going back to the previous page",
-    homePage:"Going back to the homepage",
+    homePage:"Back to Homepage",
     StoreFinder:"Store Finder",
     FAQs:"FAQs",
     DownloadApp:"Download Our App",

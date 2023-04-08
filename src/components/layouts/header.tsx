@@ -41,9 +41,12 @@ const Header = (props: any) => {
         <div>
           <h3 className="text-center">{props._site.c_topHead}</h3>
         </div>
-        <div className="flex m-auto pt-4 bg-[#f8f6f7]">
+        <div className="flex m-auto pt-4 px-5 bg-[#f8f6f7]">
           <div className="flex items-center">
-            <img src={props.lhead.flagImg.url} style={{height:"20px",paddingRight:"5px"}}/>
+            <img
+              src={props.lhead.flagImg.url}
+              style={{ height: "20px", paddingRight: "5px" }}
+            />
             <img src={headerMap} />
             <p>{props?.lhead?.storeLabel}</p>
           </div>
@@ -56,14 +59,14 @@ const Header = (props: any) => {
             {icon}
           </a>
         </div>
-        <div  
+        <div
           style={{
             display: "flex",
             justifyContent: "center",
             paddingTop: "25px",
-            backgroundColor:"#f8f6f7",
-            paddingBottom:"10px",
-            fontSize:"15px"
+            backgroundColor: "#f8f6f7",
+            paddingBottom: "10px",
+            fontSize: "15px",
           }}
         >
           {navbar}

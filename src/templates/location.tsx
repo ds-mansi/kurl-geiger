@@ -84,6 +84,7 @@ export const config: TemplateConfig = {
       "c_shopHead",
       "c_shoeSlider",
       "c_holiday",
+      "c_kind",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -305,6 +306,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_shop,
     c_shoeSlider,
     c_holiday,
+    c_kind,
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -531,12 +533,12 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           {/* shop section */}
           <Shopnew props={c_shopHead} shop={c_shop} />
-          <br/>
-          <br/>
+          <br />
+          <br />
           {/* slider */}
           <PhotoSlider props={c_shoeSlider} />
-          <br/>
-          <br/>
+          <br />
+          <br />
           {/* holiday banner */}
           <div style={{ position: "relative" }}>
             <img
@@ -549,9 +551,9 @@ const Location: Template<ExternalApiRenderData> = ({
                 bottom: "0",
                 left: "0",
                 right: "0",
-                top:"0",
+                top: "0",
                 textAlign: "center",
-                paddingTop:"17%"
+                paddingTop: "17%",
               }}
             >
               <h2>{c_holiday?.holidayText}</h2>
@@ -560,6 +562,28 @@ const Location: Template<ExternalApiRenderData> = ({
                   {c_holiday?.holidayCTa?.label}
                 </a>
               </p>
+            </div>
+          </div>
+          {/* kind Section */}
+          <div>
+            <img src={c_kind?.kindBanner?.url} />
+            <h1 className="text-center bg-[#f17f0d] text-9xl p-9">
+              <span>£</span>
+              {c_kind?.kindNum}
+            </h1>
+            <div className="flex bg-[#f17f0d] pb-2">
+              {c_kind?.kindNa?.map((res: any) => {
+                // console.log(res,"res")
+                return (
+                  <ul
+                    style={{ paddingLeft: "9%", backgroundColor: "#f17f0d" }}
+                  >
+                    <li>
+                      <a href={res?.link}>{res?.label}</a>
+                    </li>
+                  </ul>
+                );
+              })}
             </div>
           </div>
           <div className="nearby-sec">

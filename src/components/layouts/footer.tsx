@@ -5,7 +5,7 @@ type props = {
 };
 // props call
 const Footer = (props: any) => {
-  console.log(props, "abc");
+  // console.log(props, "abc");
   //   console.log("copyright",props.copy.copyright)
   React.useEffect(() => {
     document.body.setAttribute("id", "body");

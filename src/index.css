@@ -702,3 +702,13 @@ border: 1px solid black !important;
   top: 0.875rem;
 }
 
+
+.button-bx .btn{
+  background-color: #333333;
+  color: #fff;
+}
+.button-bx .btn:hover{
+  background-color: #fff;
+  color: #333333;
+  border-color: #333333;
+}
