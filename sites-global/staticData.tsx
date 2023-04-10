@@ -34,4 +34,5 @@ export const StaticData = {
     Address:"Address",
     Telephone:"Telephone",
     Holdiay:"Holdiday Hours",
+    Dollar:"$"
     }
