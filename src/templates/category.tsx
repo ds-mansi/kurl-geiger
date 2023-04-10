@@ -127,7 +127,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
  * a new deploy.
  */
 export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
-  return [`index-old/${document.id}`];
+  return [`${baseuRL}+${document.id}`];
 };
 
 /**
