@@ -217,6 +217,7 @@ export default function Nearby(props: any) {
         }}
       > */}
       {neabyData?.entities?.map((location: any, index: number) => {
+        console.log(location.meta.id,"id")
         // let url = "";
         // var name: any = location.name?.toLowerCase();
         // var country: any = location.address.countryCode?.toLowerCase();
@@ -248,9 +249,9 @@ export default function Nearby(props: any) {
                     <h2>
                       <Link
                         className="inline-block notHighlight"
-                        href={`/${location.id}`}
-                        data-ya-track={`${location.name}`}
-                        eventName={`${location.name}`}
+                        href={`/${location.meta.id}`}
+                        data-ya-track={`${location.meta.name}`}
+                        eventName={`${location.meta.name}`}
                         rel="noopener noreferrer"
                       >
                         {location.name}
@@ -313,7 +314,7 @@ export default function Nearby(props: any) {
                   <div className="button-bx">
                     <Link
                       className="btn"
-                      href={`/${location.id}`}
+                      href={`/${location.meta.id}`}
                       data-ya-track={`viewstore-${location.name}`}
                       eventName={`viewstore-${location.name}`}
                       rel="noopener noreferrer"
