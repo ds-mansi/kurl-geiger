@@ -43,7 +43,7 @@ const SearchLayout = (props: any): JSX.Element => {
   const [check, setCheck] = useState(false);
   type FilterHandle = React.ElementRef<typeof FilterSearch>;
   const filterRef = useRef<FilterHandle>(null);
-  const locationResults = useFetchResults() || [];
+  const locationResults = useFetchResults() || [];//view more functionality
   const locationinbuit =
     useSearchState((state) => state.vertical?.results) || [];
   const alternateresult =
@@ -376,7 +376,7 @@ const SearchLayout = (props: any): JSX.Element => {
               <VerticalResults
                 displayAllOnNoResults={false}
                 CardComponent={LocationCard}
-                locationResults={locationResults}
+                locationResults={locationResults}//view more functionality
                 customCssClasses={{
                   container:
                     "result-list flex flex-col scroll-smooth  overflow-auto",

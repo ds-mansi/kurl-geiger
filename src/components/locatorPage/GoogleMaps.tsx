@@ -119,7 +119,7 @@ function UnwrappedGoogleMaps({
 
   const refLocationResults = useRef({});
 
-  const locationResults = useFetchResults() || [];
+  const locationResults = useFetchResults() || [];//view more functionality
   refLocationResults.current = locationResults;
 
   locationResults.length > 0
