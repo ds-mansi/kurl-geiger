@@ -43,10 +43,12 @@ const Header = (props: any) => {
         </div>
         <div className="flex m-auto pt-4 px-5 bg-[#f8f6f7]">
           <div className="flex items-center">
+            <a href="/index.html">
             <img
               src={props?.lhead?.flagImg?.url}
               style={{ height: "20px", paddingRight: "5px" }}
             />
+            </a>
             <img src={headerMap} />
             <p>{props?.lhead?.storeLabel}</p>
           </div>
