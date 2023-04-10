@@ -13,6 +13,7 @@ import Address from "../commons/Address";
 import PerfectScrollbar from "react-perfect-scrollbar";
 import "react-perfect-scrollbar/dist/css/styles.css";
 import $ from "jquery";
+import useFetchResults from "../../hooks/useFetchResults";
 import Banner from "../locationDetail/banner";
 import LoadingSpinner from "../commons/LoadingSpinner";
 import {
@@ -29,7 +30,7 @@ import FilterSearch from "../locatorPage/FilterSearch";
 import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
 import ResultsCount from "./ResultsCount";
-import useFetchResults from "../../hooks/useFetchResults";
+
 import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
 
@@ -375,7 +376,7 @@ const SearchLayout = (props: any): JSX.Element => {
               <VerticalResults
                 displayAllOnNoResults={false}
                 CardComponent={LocationCard}
-                locationResults={locationinbuit}
+                locationResults={locationResults}
                 customCssClasses={{
                   container:
                     "result-list flex flex-col scroll-smooth  overflow-auto",

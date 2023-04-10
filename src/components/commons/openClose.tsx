@@ -201,15 +201,15 @@ export const OpenStausFunctions = {
               {" "}
               <span className="font-second-main-font "> Open now - </span>
               <span className="lowercase">
-                {OpenStausFunctions.formatTime(currentInterval.start).replace(
-                  ":00",
+                {(currentInterval.start).replace(
+                  "",
                   ""
                 )}
               </span>{" "}
               to{" "}
               <span className="lowercase">
-                {OpenStausFunctions.formatTime(currentInterval.end).replace(
-                  ":00",
+                {(currentInterval.end).replace(
+                  "",
                   ""
                 )}
               </span>{" "}
