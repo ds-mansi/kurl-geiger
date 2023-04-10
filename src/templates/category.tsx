@@ -145,7 +145,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: `${
       document.c_meta_title
         ? document.c_meta_title
-        : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+        : `Kurt Geiger || Category Template..`
     }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
@@ -157,7 +157,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `View store near you today at Kurt Geiger. We stock high-quality, robust products at competitive rates.`
+              : `Kurt Geiger || Category Template.`
           }`,
         },
       },
@@ -203,7 +203,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `View Store near you today at Kurt Geiger. We stock high-quality, robust products at competitive rates.`
+              : `Kurt Geiger || Category Template.`
           }`,
         },
       },
@@ -214,7 +214,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_title
               ? document.c_meta_title
-              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+              : `Kurt Geiger || Category Template.`
           }`,
         },
       },
@@ -239,7 +239,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `View Store near you today at Kurt Geiger. We stock high-quality, robust products at competitive rates.`
+              : `Kurt Geiger || Category Template.`
           }`,
         },
       },
@@ -250,7 +250,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_title
               ? document.c_meta_title
-              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+              : `Kurt Geiger || Category Template.`
           }`,
         },
       },
