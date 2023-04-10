@@ -482,7 +482,7 @@ const Location: Template<ExternalApiRenderData> = ({
           <PageLayout global={_site} banner={_site.c_bannerImage} />
           <div className="container">
             <div className="banner-text banner-dark-bg justify-center text-center">
-              <h1 className="heading ">{name}</h1>
+              <h1 className=" headingNme">{name}</h1>
               {/* <div className="openClosestatus detail-page closeing-div">
                 <OpenClose timezone={timezone} hours={hours} />
               </div> */}

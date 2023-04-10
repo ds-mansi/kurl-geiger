@@ -722,3 +722,7 @@ border: 1px solid black !important;
   color: #fff;
   transition-delay: 0.25s;
 }
+.headingNme{
+  text-transform:uppercase !important;
+  color: #000000 !important;
+}

@@ -78,7 +78,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
               </div>
               <h2>
                 <Link
-                  className="inline-block notHighlight"
+                  className="inline-block notHighlight uppercase"
                   data-ya-track={`viewDetail -${result.rawData.name}`}
                   eventName={`viewDetail -${result.rawData.name}`}
                   rel="noopener noreferrer"
