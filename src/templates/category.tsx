@@ -73,6 +73,7 @@ export const config: TemplateConfig = {
       "uid",
       "meta",
       "name",
+      "slug",
       "c_footwear.name",
       "c_footwear.c_products",
       "c_bags.name",
