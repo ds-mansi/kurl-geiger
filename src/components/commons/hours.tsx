@@ -217,7 +217,7 @@ const DayRow = (props: DayRow) => {
     }
   }
   return (
-    <tr className={isToday ? "bg-[#ec66b0] text-[#ffff] pr-1" : ""}>
+    <tr className={isToday ? "bg-[#000] text-[#c5479f] pr-1" : ""}>
       {Status ? (
         <td key={"td1"} className="capitalize text-left  pl-1 pr-4">
           <span>{dayName} (Holiday Hours)</span>

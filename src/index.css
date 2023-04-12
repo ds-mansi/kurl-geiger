@@ -163,6 +163,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .location .button-bx .btn{
   background-color: #000000;
   border: 1px solid black !important;
+  width: 10.75rem;
 }
 .location .button-bx .btn:hover{
   background-color: #fff!important;
@@ -186,7 +187,7 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
     hover:text-white   border-black border hover:border-transparent  bg-white text-sm md:text-base font-medium flex items-center justify-center  }
 .button-bx .btn + .btn{  @apply mt-2 sm:mt-0}     
 .button-bx .btn:hover svg{@apply fill-white  }
-.scrollbar-container{@apply md:pr-3 md:!h-[calc(100vh_-_11rem)]}
+.scrollbar-container{@apply md:pr-3 md:!h-[calc(120vh_-_11rem)]}
 .scrollbar-container.ps--active-y{ @apply pr-6}
 body .ps:hover .ps__rail-y{@apply opacity-100}
 body .ps__rail-y{ @apply opacity-100 mt-4 !bg-gray-light w-4}
@@ -277,7 +278,8 @@ table.day-hrs .time-b{  @apply text-lg md:text-lg  w-auto leading-[1.875rem] rou
   @apply w-5 mr-0
 }
 .icon-row h6{
-  @apply font-normal text-red m-0 leading-5 text-base md:text-lg md:leading-5 mb-1.5
+  @apply font-normal text-red m-0 leading-5 text-base md:text-lg md:leading-5 mb-1.5;
+  color: #ae2d87 !important;
 }
 .availablity-content{
   /*  border-l border-nav-link*/ @apply pl-0 py-1.5 
@@ -348,15 +350,18 @@ border: 1px solid black !important;
 /* locator page start  */
 
 /* breadcrumb */
-.breadcrumb{@apply text-nav-link py-2;
+.breadcrumb{@apply text-nav-link;
   background-color: #ec66b0;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .breadcrumb ul{
   @apply flex flex-wrap items-center;
-  padding-left: 28px;
+  padding-left: 55px;
 }
 .breadcrumb ul li{
-  @apply md:mr-2.5 font-second-main-font text-dark-gray flex items-center text-base md:text-base
+  @apply md:mr-2.5 font-second-main-font text-dark-gray flex items-center text-base md:text-base;
+  font-size: 1.25rem;
 }
 .breadcrumb ul li .home{
   @apply underline
@@ -403,17 +408,20 @@ border: 1px solid black !important;
 .opennow-sec{@apply w-3/5 even:w-2/5 flex flex-row items-center text-lg sm:text-lg mb-2.5}
 .opennow-sec .icons{@apply min-w-[0.75rem] sm:min-w-[1.25rem] mr-1 sm:mr-1}
 .opennow-sec .icons img{@apply w-5 sm:w-5}
-.direction-button{@apply mt-6 }
+.direction-button{@apply mt-6 ;
+ 
+}
 .direction-button a{@apply  !bg-Dark-red !text-white  !border-button-light hover:!border-transparent !border-2 }
 .direction-button .btn:hover svg{@apply !fill-red }
 .opennow-sec.deactive-feci{@apply opacity-70 text-red }
 .address-main-sec .button-bx{  @apply mt-5 justify-start ml-0 md:ml-0}
 .address-main-sec .button-bx .btn{  @apply min-w-[10.25rem] w-40 py-3 uppercase font-second-main-font !border-none hover:!bg-hover-btn leading-5  md:w-auto ;
   background-color: #000000 !important;
+  border: 1px  solid black !important;
 }
 .address-main-sec .button-bx .btn:hover{
   background-color:#fff !important;
-  color: #000000 !important;
+  color: #ec66b0 !important;
   border: 1px  solid black !important;
 }
 .availability-col{  @apply mt-4  mb-0 pl-0    !flex-row flex-wrap}
@@ -501,9 +509,10 @@ border: 1px solid black !important;
 .nearby-card{@apply w-full bg-white overflow-hidden  z-10 relative shadow-sm last:mb-0 lg:last:mb-6  mb-6 lg:mt-6  lg:relative p-3 md:p-5 border border-box-border
 }
 .nearby-card .red-dot{ @apply !justify-start}
-.nearby-card .icon-row{ @apply pl-0}
+.nearby-card .icon-row{padding-left: 0.625rem}
 .nearby-card .OpenDot{ @apply  font-second-main-font  text-lg}
-.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black }
+.nearby-card h2 a{ @apply font-second-main-font  !text-lg text-black;
+font-size: 18px !important; }
 .nearby-card .distance{ @apply absolute right-0 md:right-2 top-0 md:-top-0.5}
 .near-address{ @apply flex mt-2 items-start min-h-[90px]}
 .nearby-card .address { @apply text-lg }
@@ -542,6 +551,7 @@ border: 1px solid black !important;
 .locator-main .result{ @apply border-l-4 border-l-white}
 .locator-main{
   padding-left: 25px !important;
+  max-width: 93.5rem !important;
 }
 .locator-main .result.active{@apply border-l-4 border-l-hover-border}
 .locator-main .result.fixed-hover.active{@apply border-l-4 border-l-red}
@@ -752,4 +762,10 @@ border: 1px solid black !important;
   color: #ec66b0;
   border: 1px solid #000000;
   text-decoration: underline;
+}
+.OpenCloseStatus .daylist {
+  @apply hidden;
+}
+.active.daylist {
+  @apply !block pl-[50px];
 }

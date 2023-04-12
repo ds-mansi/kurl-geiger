@@ -61,7 +61,7 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  console.log( document.slug," document.slug")
+  console.log(document.slug, " document.slug");
   let url = "";
   document.dm_directoryParents.map((i: any) => {
     if (i.meta.entityType.id == "ce_country") {
@@ -268,7 +268,14 @@ const region: Template<TemplateRenderProps> = ({
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
               <Link
                 key={entity.slug}
-                href={slug + "/" + entity.slug + "/" + entity.dm_directoryChildren[0].slug + ".html"}
+                href={
+                  slug +
+                  "/" +
+                  entity.slug +
+                  "/" +
+                  entity.dm_directoryChildren[0].slug +
+                  ".html"
+                }
                 //href={slug + "/" + entity.slug + ".html"}
                 className="text-blue hover:text-red"
                 eventName={entity.name}
@@ -277,8 +284,7 @@ const region: Template<TemplateRenderProps> = ({
               </Link>
             </div>
           );
-        }
-        else {
+        } else {
           let name: any = entity.dm_directoryChildren[0].name.toLowerCase();
           let string: any = name.toString();
           let removeSpecialCharacters = string.replace(
@@ -290,21 +296,27 @@ const region: Template<TemplateRenderProps> = ({
           url = `${entity.dm_directoryChildren[0].id}-${finalString}.html`;
           return (
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
-              <Link key={entity.slug} href={slug + "/" + entity.slug + url } className="text-blue hover:text-red" rel="noopener noreferrer" eventName={`LocationName`}>
+              <Link
+                key={entity.slug}
+                href={slug + "/" + entity.slug + url}
+                className="text-blue hover:text-red"
+                rel="noopener noreferrer"
+                eventName={`LocationName`}
+              >
                 {entity.name} ({entity.dm_baseEntityCount})
               </Link>
             </div>
           );
         }
-      }
-      else {
+      } else {
         return (
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
             <Link
               key={entity.slug}
               href={slug + "/" + entity.slug + ".html"}
               className="text-blue hover:text-red"
-              rel="noopener noreferrer" eventName={`name`}
+              rel="noopener noreferrer"
+              eventName={`name`}
             >
               {entity.name} ({entity.dm_baseEntityCount})
             </Link>
@@ -312,7 +324,7 @@ const region: Template<TemplateRenderProps> = ({
         );
       }
     });
-  let templateData = { document: document};
+  let templateData = { document: document };
   let breadcrumbScheme: any = [];
   let currentIndex: any = 0;
   dm_directoryParents &&
@@ -333,7 +345,9 @@ const region: Template<TemplateRenderProps> = ({
     "@type": "ListItem",
     position: currentIndex + 1,
     item: {
-      "@id": `${stagingBaseurl}${dm_directoryParents[1].slug}/${document.slug.toString()}.html`,
+      "@id": `${stagingBaseurl}${
+        dm_directoryParents[1].slug
+      }/${document.slug.toString()}.html`,
       name: document.name,
     },
   });
@@ -341,32 +355,32 @@ const region: Template<TemplateRenderProps> = ({
   // let bannerimage = c_banner_image && c_banner_image.image.url;
   return (
     <>
-       {/* header call */}
-       <Header
-            _site={_site}
-            lhead={_site?.c_lowerHeader}
-            nav={_site?.c_navbar}
-          />
+      {/* header call */}
+      <Header
+        _site={_site}
+        lhead={_site?.c_lowerHeader}
+        nav={_site?.c_navbar}
+      />
       {/* header ends */}
       <PageLayout global={_site} banner={_site?.c_bannerImage} />
-        <BreadCrumbs
-          name={name}
-          parents={dm_directoryParents}
-          baseUrl={relativePrefixToRoot}
-          address={address}
-        ></BreadCrumbs>
-        {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
+      <BreadCrumbs
+        name={name}
+        parents={dm_directoryParents}
+        baseUrl={relativePrefixToRoot}
+        address={address}
+      ></BreadCrumbs>
+      {/* <div className="location-dtl">     <Banner name={c_bannerHeading?c_bannerHeading:name} c_bannerImage={bannerimage}  /></div> */}
 
-        <div className="content-list">
-          <div className="container">
-            <div className="sec-title">
-              <h2 style={{ textAlign: "center" }}>{name}</h2>
-            </div>
-            <ul className="region-list">{childrenDivs}</ul>
+      <div className="content-list">
+        <div className="container">
+          <div className="sec-title">
+            <h2 style={{ textAlign: "center" }}>{name}</h2>
           </div>
+          <ul className="region-list">{childrenDivs}</ul>
         </div>
-     {/* Footer starts */}
-     <Footer _site={_site} footer={_site?.c_footer} />
+      </div>
+      {/* Footer starts */}
+      <Footer _site={_site} footer={_site?.c_footer} />
       {/* footer ends */}
     </>
   );
