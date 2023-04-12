@@ -19,7 +19,7 @@ const Header = (props: any) => {
   // upper header
   // const uphead=props?.c_topHead
   const icon = props?.lhead?.icon?.map((ico: any) => {
-    console.log(ico, "icon");
+    // console.log(ico, "icon");
     return <img src={ico?.url} />;
   });
 
@@ -39,7 +39,7 @@ const Header = (props: any) => {
     <>
       <div>
         <div>
-          <h3 className="text-center">{props._site.c_topHead}</h3>
+          <h3 className="text-center">{props?._site?.c_topHead}</h3>
         </div>
         <div className="flex m-auto pt-4 px-5 bg-[#f8f6f7]">
           <div className="flex items-center">
@@ -53,7 +53,7 @@ const Header = (props: any) => {
           </div>
           <a href="/index.html">
             <img
-              src={props?.lhead?.storeLogoImg.url}
+              src={props?.lhead?.storeLogoImg?.url}
               style={{ width: "22%", margin: "auto" }}
             />
           </a>

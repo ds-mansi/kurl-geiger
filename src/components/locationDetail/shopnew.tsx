@@ -5,7 +5,7 @@ type shops = {
 };
 
 const shopnew = (res: shops) => {
-  console.log(res, "restd");
+  // console.log(res, "restd");
   return (
     <>
       <div>

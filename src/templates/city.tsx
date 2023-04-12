@@ -112,7 +112,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: `${
       document.c_meta_title
         ? document.c_meta_title
-        : ` Vista Optical in ${document.name} | Find a Local Store`
+        : ` Kurt Gieger in ${document.name} | Find a Local Store`
     }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
@@ -131,7 +131,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Use this page to find your nearest Vista Optical store in ${document.name} and discover the location details you need to visit us today.`
+              : `Use this page to find your nearest Kurt Gieger store in ${document.name} and discover the location details you need to visit us today.`
           }`,
         },
       },
@@ -196,7 +196,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find Vista Optical Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
+              : `Find Kurt Gieger Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -239,7 +239,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_description
               ? document.c_meta_description
-              : `Find  Vista Optical Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
+              : `Find  Kurt Gieger Store in ${document.name}. We stock high-quality, robust products at competitive rates.`
           }`,
         },
       },
@@ -333,8 +333,8 @@ const City: Template<TemplateRenderProps> = ({
             </Link>
           </h2>
         </div>
-        <div className="flex">
-          <div style={{ width: "58%" }}>
+        <div>
+          <div>
             <div className="icon-row">
               <Address address={entity.address} />
             </div>
@@ -520,10 +520,10 @@ const City: Template<TemplateRenderProps> = ({
         }}
       />
       <Header
-            _site={_site}
-            lhead={_site?.c_lowerHeader}
-            nav={_site?.c_navbar}
-          />
+        _site={_site}
+        lhead={_site?.c_lowerHeader}
+        nav={_site?.c_navbar}
+      />
       <PageLayout global={_site} banner={_site?.c_bannerImage} />
       <BreadCrumbs
         name={name}
@@ -535,7 +535,7 @@ const City: Template<TemplateRenderProps> = ({
       <div className="content-list city-page">
         <div className="container mx-auto">
           <div className="sec-title">
-            <h2>Vista Optical stores in {name}</h2>
+            <h2>Kurt Gieger stores in {name}</h2>
           </div>
           <div className="flex flex-wrap justify-center items-start -mx-2.5 lg:-mx-[.9375rem]">
             {childrenDivs}

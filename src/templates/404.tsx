@@ -58,7 +58,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = () => {
 // Template that will show as the page
 const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
   const { _site } = document;
-  console.log(_site, "_site");
+  // console.log(_site, "_site");
   const slide = _site?.c_globalSlider?.map((slid: any) => {
     return (
       <ul>

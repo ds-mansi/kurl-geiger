@@ -85,6 +85,10 @@ export const config: TemplateConfig = {
       "c_shoeSlider",
       "c_holiday",
       "c_kind",
+      "dm_directoryParents.name",
+      "dm_directoryParents.slug",
+      "dm_directoryParents.dm_baseEntityCount",
+      "dm_directoryParents.meta.entityType",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -105,22 +109,36 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // var url = "";
-  // var name: any = document.name.toLowerCase();
-  // var string: any = name.toString();;
-  // let result: any = string.replaceAll(" ", "-");
-  // document.dm_directoryParents.map((result: any, i: Number) => {
-  //   if (i > 0) {
-  //     url += result.slug + "/"
-  //   }
-  // })
-  // if (!document.slug) {
-  //   url += `${result}.html`;
-  // } else {
-  //   url += `${document.slug.toString()}.html`;
-  // }
+  let url = "";
+  var name: any = document.name?.toLowerCase();
+  var mainPhone: any = document.mainPhone;
+  var country: any = document.address.countryCode?.toLowerCase();
+  var region: any = document.address.region?.toLowerCase().replaceAll(" ", "-");
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-");
+  var city: any = document.address.city?.toLowerCase()?.replaceAll(" ", "-");
+  var initialrcity: any = city.toString();
+  var finalcity: any = initialrcity.replaceAll(" ", "-");
+  var string: any = name.toString();
+  let result1: any = string.replaceAll(" ", "-");
+  var link =
+    country +
+    "/" +
+    region +
+    "/" +
+    city +
+    "/" +
+    document?.slug?.toString() +
+    ".html";
+  // var link=document.id.toString()
+  // console.log(link, "link");
+  if (!document.slug) {
+    url = `/${link}.html`;
+  } else {
+    url = `/${link}`;
+  }
 
-  return document.id;
+  return url;
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
@@ -267,7 +285,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
   }`;
 
   const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=93ed4eb95d481501ecc17410efa52034&v=20231201&resolvePlaceholders=true&entityTypes=location&limit=8`;
-  console.log(url);
+  // console.log/(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
   )) as nearByLocation;
@@ -302,6 +320,7 @@ const Location: Template<ExternalApiRenderData> = ({
     cityCoordinate,
     name,
     c_deliveryTime,
+    dm_directoryParents,
     c_shopHead,
     c_shop,
     c_shoeSlider,
@@ -479,7 +498,14 @@ const Location: Template<ExternalApiRenderData> = ({
             lhead={_site?.c_lowerHeader}
             nav={_site?.c_navbar}
           />
-          <PageLayout global={_site} banner={_site.c_bannerImage} />
+          <PageLayout global={_site} banner={_site?.c_bannerImage} />
+          <BreadCrumbs
+            name={name}
+            parents={dm_directoryParents}
+            baseUrl={relativePrefixToRoot}
+            address={{}}
+          ></BreadCrumbs>
+
           <div className="container">
             <div className="banner-text banner-dark-bg justify-center text-center">
               <h1 className=" headingNme">{name}</h1>
@@ -566,7 +592,7 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           {/* kind Section */}
           <div>
-            <img src={c_kind?.kindBanner?.url} style={{width:"100%"}}/>
+            <img src={c_kind?.kindBanner?.url} style={{ width: "100%" }} />
             <h1 className="text-center bg-[#f17f0d] text-9xl p-9">
               <span>£</span>
               {c_kind?.kindNum}
@@ -575,9 +601,7 @@ const Location: Template<ExternalApiRenderData> = ({
               {c_kind?.kindNa?.map((res: any) => {
                 // console.log(res,"res")
                 return (
-                  <ul
-                    style={{ paddingLeft: "9%", backgroundColor: "#f17f0d" }}
-                  >
+                  <ul style={{ paddingLeft: "9%", backgroundColor: "#f17f0d" }}>
                     <li>
                       <a href={res?.link}>{res?.label}</a>
                     </li>
@@ -601,6 +625,11 @@ const Location: Template<ExternalApiRenderData> = ({
                 )}
               </div>
             </div>
+            <a className="view-more-btn" href="/index.html">
+              <p style={{ textTransform: "uppercase", paddingLeft: "20%" }}>
+                View More Location
+              </p>
+            </a>
           </div>
           <Footer _site={_site} footer={_site?.c_footer} />
         </AnalyticsScopeProvider>

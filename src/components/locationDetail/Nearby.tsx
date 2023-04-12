@@ -217,26 +217,37 @@ export default function Nearby(props: any) {
         }}
       > */}
       {neabyData?.entities?.map((location: any, index: number) => {
-        console.log(location.meta.id,"id")
-        // let url = "";
-        // var name: any = location.name?.toLowerCase();
-        // var country: any = location.address.countryCode?.toLowerCase();
-        // var initialcountry: any = country.toString();
-        // var finalcountry: any = initialcountry.replaceAll(" ", "-");
-        // var region: any = location.address.region?.toLowerCase();
-        // var initialregion: any = region.toString();
-        // var finalregion: any = initialregion.replaceAll(" ", "-");
-        // var city: any = location.address.city?.toLowerCase();
-        // var initialrcity: any = city.toString();
-        // var finalcity: any = initialrcity.replaceAll(" ", "-");
-        // var string: any = name.toString();
-        // let result1: any = string.replaceAll(" ", "-");
-        // let main_result:any=finalcountry+"/"+finalregion+"/"+finalcity+"/"+location.slug+".html";
-        // if (!location.slug) {
-        //   url = `/${location.id}-${result1}.html`;
-        // } else {
-        //   url = `/${main_result}`;
-        // }
+        let url = "";
+        // console.log(location.slug,"id")
+        var name: any = location.name?.toLowerCase();
+        var mainPhone: any = location?.mainPhone;
+        var region: any = location.address.region
+          ?.toLowerCase()
+          .replaceAll(" ", "-");
+        var country: any = location.address.countryCode?.toLowerCase();
+        var initialregion: any = region.toString();
+        var finalregion: any = initialregion.replaceAll(" ", "-");
+        var city: any = location.address.city?.toLowerCase();
+        var initialrcity: any = city.toString();
+        var finalcity: any = initialrcity.replaceAll(" ", "-");
+        var string: any = name.toString();
+        let result1: any = string.replaceAll(" ", "-");
+        var link =
+          country +
+          "/" +
+          region +
+          "/" +
+          city +
+          "/" +
+          location.slug?.toString() +
+          ".html";
+        // console.log(link,"link")
+        // var link=location.id?.toString()
+        if (!location.slug) {
+          url = `/${link}.html`;
+        } else {
+          url = `/${link}`;
+        }
 
         {
           if (index > 0) {
@@ -249,7 +260,7 @@ export default function Nearby(props: any) {
                     <h2>
                       <Link
                         className="inline-block notHighlight"
-                        href={`/${location.meta.id}`}
+                        href={`/${link}`}
                         data-ya-track={`${location.meta.name}`}
                         eventName={`${location.meta.name}`}
                         rel="noopener noreferrer"
@@ -314,7 +325,7 @@ export default function Nearby(props: any) {
                   <div className="button-bx">
                     <Link
                       className="btn"
-                      href={`/${location.meta.id}`}
+                      href={`/${link}`}
                       data-ya-track={`viewstore-${location.name}`}
                       eventName={`viewstore-${location.name}`}
                       rel="noopener noreferrer"

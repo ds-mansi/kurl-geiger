@@ -45,7 +45,7 @@ const Footer = (props: any) => {
     );
   });
 
-  console.log(props?._site?.c_terms, "terms");
+  // console.log(props?._site?.c_terms, "terms");
 
   return (
     <>

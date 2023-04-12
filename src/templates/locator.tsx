@@ -216,7 +216,7 @@ const Locator: Template<TemplateRenderProps> = ({ document, __meta }) => {
       "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
   };
   var Api = "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18";
-  console.log(_site, "Site");
+  // console.log(_site, "Site");
   return (
     <>
       <JsonLd<locator>

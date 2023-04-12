@@ -301,10 +301,10 @@ const Location: Template<ExternalApiRenderData> = ({
   // console.log(document.c_footwear,"documentc_footwear")
 
   let templateData = { document: document, __meta: __meta };
-  console.log(_site, "DetaipPage");
+  // console.log(_site, "DetaipPage");
   return (
     <>
-      <JsonLd<locator>
+      <JsonLd<category>
         item={{
           "@context": "https://schema.org",
           "@type": "Organization",

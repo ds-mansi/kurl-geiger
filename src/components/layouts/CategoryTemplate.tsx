@@ -97,7 +97,7 @@ const CategoryTemplate = (template: any) => {
     });
   });
   const banneraccessories = template?.access?.map((acc: any) => {
-    console.log(acc, "acc");
+    // console.log(acc, "acc");
     return (
       <>
         <div style={{ position: "relative" }}>
