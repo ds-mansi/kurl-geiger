@@ -31,6 +31,7 @@ import Address from "../components/commons/Address";
 import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
 import timesvg from "../images/watch-icn.svg";
+import Phonesvg from "../images/telephone.svg";
 import { Link } from "@yext/pages/components";
 import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
@@ -340,10 +341,10 @@ const City: Template<TemplateRenderProps> = ({
             </div>
             {entity.mainPhone ? (
               <div className="icon-row">
-                {/* <div className="icon">
+                <div className="icon">
            <img className=" " src={Phonesvg} width="20" height="20"
                         alt="" />
-                        </div> */}
+                        </div>
                 <div className="content-col">
                   <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
                 </div>

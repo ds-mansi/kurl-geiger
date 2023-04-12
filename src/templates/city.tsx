@@ -31,6 +31,7 @@ import Address from "../components/commons/Address";
 import PageLayout from "../components/layouts/PageLayout";
 import OpenClose from "../components/commons/openClose";
 import timesvg from "../images/watch-icn.svg";
+import Phonesvg from "../images/telephone.svg";
 import { Link } from "@yext/pages/components";
 import Footer from "../components/layouts/footer";
 import Header from "../components/layouts/header";
@@ -340,11 +341,16 @@ const City: Template<TemplateRenderProps> = ({
             </div>
             {entity.mainPhone ? (
               <div className="icon-row">
-                {/* <div className="icon">
-           <img className=" " src={Phonesvg} width="20" height="20"
-                        alt="" />
-                        </div> */}
-                <div className="content-col">
+                <div className="icon">
+                  <img
+                    className=""
+                    src={Phonesvg}
+                    width="20"
+                    height="20"
+                    alt=""
+                  />
+                </div>
+                <div className="content-col" style={{ marginLeft: "15px" }}>
                   <a href={`tel:${entity.mainPhone}`}>{entity.mainPhone}</a>
                 </div>
               </div>
@@ -353,8 +359,16 @@ const City: Template<TemplateRenderProps> = ({
             )}
 
             <div className="icon-row">
-              <div className="content-col open-now-string">
+              <div className="content-col open-now-string flex">
+              <img
+                    className=""
+                    src={timesvg}
+                    width="20"
+                    height="20"
+                    alt=""
+                  />
                 {typeof entity?.hours?.reopenDate != "undefined" ? (
+                  
                   <h6>{StaticData.tempClosed}</h6>
                 ) : (
                   <OpenClose timezone={entity.timezone} hours={entity.hours} />
