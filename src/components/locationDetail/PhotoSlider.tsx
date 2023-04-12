@@ -1,7 +1,6 @@
 import * as React from "react";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
-
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 const PhotoSlider = (props: any) => {
   const { c_shoeSlider } = props;
 
@@ -12,7 +11,7 @@ const PhotoSlider = (props: any) => {
           src={element?.sliderImgs?.url}
           style={{
             height: "67%",
-            width: "30%",
+            width: "100%",
             display: "block",
             margin: "auto",
           }}
@@ -45,7 +44,22 @@ const PhotoSlider = (props: any) => {
   ));
   return (
     <>
-      <Splide aria-label="Photo Slider">{photos}</Splide>
+      <Splide
+        aria-label="Photo Slider"
+        options={{
+          rewind: false,
+          width: "100%",
+          gap: "1rem",
+          type: "loop",
+          perPage: 4,
+          perMove: 1,
+          arrows: true,
+          drag: true,
+          pagination: true,
+        }}
+      >
+        {photos}
+      </Splide>
     </>
   );
 };
