@@ -21,7 +21,7 @@ const shopnew = (res: shops) => {
             <>
               <img
                 src={sho?.shopImg?.url}
-                style={{ height: "452px", width: "500px" }}
+                style={{ height: "452px", width: "447.5px" }}
               />
             </>
           );
