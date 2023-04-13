@@ -341,8 +341,13 @@ border: 1px solid black !important;
 .map-section .button-bx .btn:hover svg{@apply !fill-red }
 .map-section .button-bx .btn{
   background-color: #000000;
+  border: 1px solid #000000 !important;
 }
-
+.map-section .button-bx .btn:hover{
+  background-color: #fff !important;
+  color: #ae2d87 !important;
+  border: 1px solid #ae2d87 !important;
+}
 .nearby-card .green-dot svg, .nearby-card .red-dot svg{@apply order-2 ml-1 mt-1 }
 
 

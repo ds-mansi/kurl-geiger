@@ -601,7 +601,13 @@ const Location: Template<ExternalApiRenderData> = ({
               {c_kind?.kindNa?.map((res: any) => {
                 // console.log(res,"res")
                 return (
-                  <ul style={{ paddingLeft: "9%", backgroundColor: "#f17f0d" }}>
+                  <ul
+                    style={{
+                      paddingLeft: "11%",
+                      backgroundColor: "#f17f0d",
+                      fontSize: "15px",
+                    }}
+                  >
                     <li>
                       <a href={res?.link}>{res?.label}</a>
                     </li>

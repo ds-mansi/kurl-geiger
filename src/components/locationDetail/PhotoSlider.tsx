@@ -54,8 +54,8 @@ const PhotoSlider = (props: any) => {
           perPage: 4,
           perMove: 1,
           arrows: true,
-          drag: true,
-          pagination: true,
+          drag: false,
+          pagination: false,
         }}
       >
         {photos}
