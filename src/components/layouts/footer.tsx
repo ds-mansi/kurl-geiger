@@ -18,9 +18,9 @@ const Footer = (props: any) => {
     // console.log(foo.label, "foo");
     return (
       <>
-        <a href={foo?.link}>
-          <h3 style={{ paddingBottom: "5px" }}>{foo?.label}</h3>
-        </a>
+        <h3 style={{ paddingBottom: "5px" }}>
+          <a href={foo?.link}>{foo?.label}</a>
+        </h3>
       </>
     );
   });
@@ -28,9 +28,9 @@ const Footer = (props: any) => {
     // console.log(foo1.label, "foo");
     return (
       <>
-        <a href={foo1?.link}>
-          <h3 style={{ paddingBottom: "5px" }}>{foo1?.label}</h3>
-        </a>
+        <h3 style={{ paddingBottom: "5px" }}>
+          <a href={foo1?.link}>{foo1?.label}</a>
+        </h3>
       </>
     );
   });
@@ -38,9 +38,9 @@ const Footer = (props: any) => {
     // console.log(foo2.label, "foo");
     return (
       <>
-        <a href={foo2?.link}>
-          <h3 style={{ paddingBottom: "5px" }}>{foo2?.label}</h3>
-        </a>
+        <h3 style={{ paddingBottom: "5px" }}>
+          <a href={foo2?.link}>{foo2?.label}</a>
+        </h3>
       </>
     );
   });
