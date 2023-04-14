@@ -57,19 +57,19 @@ const Footer = (props: any) => {
           <div className="flex" style={{ width: "60%" }}>
             <div>
               <h3 className="footernav">{props?.footer?.footerHeading}</h3>
-              <p className="footerp">{footh1}</p>
+              <h5 className="footerp">{footh1}</h5>
             </div>
             <div>
               <h3 className="footernav">{props?.footer?.footerHeading2}</h3>
-              <p className="footerp">{footh2}</p>
+              <h5 className="footerp">{footh2}</h5>
             </div>
             <div>
               <h3 className="footernav">{props?.footer?.footerHeading3}</h3>
-              <p className="footerp">{footh3}</p>
+              <h5 className="footerp">{footh3}</h5>
             </div>
           </div>
           <div style={{ width: "40%" }}>
-            <p
+            <h5
               style={{
                 fontSize: "16px",
                 marginRight: "10%",
@@ -78,19 +78,19 @@ const Footer = (props: any) => {
               }}
             >
               {props?._site?.c_signUp?.signUpText}
-            </p>
-            <p style={{ fontSize: "16px", marginRight: "10%" }}>
+            </h5>
+            <h5 style={{ fontSize: "16px", marginRight: "10%" }}>
               {props?._site?.c_signUp?.privacyPolicy}
-            </p>
+            </h5>
           </div>
         </div>
         <div
           className="flex"
           style={{ paddingBottom: "45px", justifyContent: "center" }}
         >
-          <p style={{ paddingRight: "25px", fontSize: "15px" }}>
+          <h5 style={{ paddingRight: "25px", fontSize: "15px" }}>
             {props?._site?.c_terms?.tAndC}
-          </p>
+          </h5>
           <a
             href={props?._site?.c_terms?.preference?.link}
             style={{ textDecoration: "underline" }}
