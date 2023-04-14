@@ -15,6 +15,7 @@ const PhotoSlider = (props: any) => {
             display: "block",
             margin: "auto",
           }}
+          alt=""
         />
         <div
           style={{

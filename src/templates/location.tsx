@@ -570,6 +570,7 @@ const Location: Template<ExternalApiRenderData> = ({
             <img
               src={c_holiday?.holidayBanner.url}
               style={{ margin: "auto" }}
+              alt=""
             />
             <div
               style={{
@@ -592,7 +593,7 @@ const Location: Template<ExternalApiRenderData> = ({
           </div>
           {/* kind Section */}
           <div>
-            <img src={c_kind?.kindBanner?.url} style={{ width: "100%" }} />
+            <img src={c_kind?.kindBanner?.url} style={{ width: "100%" }} alt=""/>
             <h1 className="text-center bg-[#f17f0d] text-9xl p-9">
               <span>£</span>
               {c_kind?.kindNum}
