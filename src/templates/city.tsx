@@ -538,7 +538,7 @@ const City: Template<TemplateRenderProps> = ({
         lhead={_site?.c_lowerHeader}
         nav={_site?.c_navbar}
       />
-      <PageLayout global={_site} banner={_site?.c_bannerImage} />
+      
       <BreadCrumbs
         name={name}
         address={address}

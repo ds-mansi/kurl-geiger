@@ -362,7 +362,6 @@ const region: Template<TemplateRenderProps> = ({
         nav={_site?.c_navbar}
       />
       {/* header ends */}
-      <PageLayout global={_site} banner={_site?.c_bannerImage} />
       <BreadCrumbs
         name={name}
         parents={dm_directoryParents}

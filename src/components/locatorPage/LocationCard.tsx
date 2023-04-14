@@ -11,6 +11,9 @@ import { Link } from "@yext/pages/components";
 import { useState } from "react";
 import Hours from "../commons/hours";
 import phone from "../../images/telephone.svg";
+import Holidayhours from "../locationDetail/Holdayhours";
+import Model from "../locationDetail/Model";
+
 
 const metersToMiles = (meters: number) => {
   const miles = meters * 0.000621371;
@@ -51,7 +54,8 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   }
 
  
-  const { address, hours, additionalHoursText } = result.rawData;
+  const { address, hours, additionalHoursText,c_specific_day ,} = result.rawData;
+  console.log(result.rawData,"holidday kya hai");
   var name: any = result.rawData.name?.toLowerCase();
   var mainPhone: any = result.rawData.mainPhone;
   var country: any = result.rawData.address.countryCode?.toLowerCase();
@@ -83,7 +87,10 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   } else {
     url = `/${link}`;
   }
-
+// console.log(hours?.holidayHours,"holiday")
+// const holiday=hours?.holidayHours?.map((hol:any)=>{
+//   return(hol)
+// })
 
   return (
     <div
@@ -126,7 +133,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 ""
               )}
             </div>
-
+            
             <div className="icon-row content-col address-with-availablity notHighlight">
               <Address address={address} />
               <div className="flex mt-2">
@@ -136,6 +143,11 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                     {mainPhone}
                   </a>
                 </div>
+               
+                <Model
+                  name={StaticData.Holdiay}
+                  holidayHours={hours?.holidayHours}
+                />
               {result.rawData.hours ? (
                   <>
                     <div className="open-close ">

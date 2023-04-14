@@ -33,6 +33,6 @@ export const StaticData = {
     Reopenmessage:"Message - The store is temporarily closed. It will reopen at",
     Address:"Address",
     Telephone:"Telephone",
-    Holdiay:"Holdiday Hours",
+    Holdiay:"Holiday Hours",
     Dollar:"$"
     }
