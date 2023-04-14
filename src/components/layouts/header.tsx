@@ -20,7 +20,7 @@ const Header = (props: any) => {
   // const uphead=props?.c_topHead
   const icon = props?.lhead?.icon?.map((ico: any) => {
     // console.log(ico, "icon");
-    return <img src={ico?.url} />;
+    return <img src={ico?.url} alt=""/>;
   });
 
   // nav
@@ -46,15 +46,17 @@ const Header = (props: any) => {
             <img
               src={props?.lhead?.flagImg?.url}
               style={{ height: "20px", paddingRight: "5px" }}
+              alt=""
             />
 
-            <img src={headerMap} />
+            <img src={headerMap} alt=""/>
             <p>{props?.lhead?.storeLabel}</p>
           </div>
           <a href="/index.html">
             <img
               src={props?.lhead?.storeLogoImg?.url}
               style={{ width: "22%", margin: "auto" }}
+              alt=""
             />
           </a>
           <a href="#" style={{ display: "flex", height: "25px" }}>

@@ -13,7 +13,8 @@
       "c_signUp",
       "c_terms",
       "c_bannerImage",
-      "c_globalSlider"
+      "c_globalSlider",
+      "c_searchBy"
 
   ],
   "localization": {
