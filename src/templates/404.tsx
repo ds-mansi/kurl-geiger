@@ -63,7 +63,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
     return (
       <ul>
         <li>
-          <img src={slid?.sliderImg?.url} style={{ height: "19.75rem" }} />
+          <img src={slid?.sliderImg?.url} style={{ height: "19.75rem" }} alt=""/>
         </li>
       </ul>
     );
@@ -122,7 +122,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
         nav={_site?.c_navbar}
       />
       <div>
-        <img src={image} style={{ position: "relative", width: "100%" }} />
+        <img src={image} style={{ position: "relative", width: "100%" }} alt=""/>
         <div className="content-list">
           <div className="container">
             <div
