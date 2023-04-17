@@ -1,11 +1,11 @@
 import * as React from "react";
 import { useEffect } from "react";
 const Holidayhours = (props: any) => {
-  console.log(props,"props holiday")
+  // console.log(props,"props holiday")
   return (
     <>
       {props.hours.map((res: any, index: Number) => {
-        console.log(res.isClosed);
+        // console.log(res.isClosed);
         const weeks = [
           "Sunday",
           "Monday",
@@ -36,7 +36,7 @@ const Holidayhours = (props: any) => {
             <div className="pop-up-holyhrs">
               <div>{join(new Date(res.date), a, "-")}</div>
               <div>{weeks[day]}</div>
-              {console.log(res)}
+              {/* {console.log(res)} */}
               {res.isClosed ? (
                 <span className="cl-time">Closed</span>
               ) : (

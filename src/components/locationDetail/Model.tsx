@@ -41,7 +41,7 @@ function Model(props: any) {
   var day;
   return (
     <>
-      {props.holidayHours.map((res: any, index: Number) => {
+      {props?.holidayHours?.map((res: any, index: Number) => {
         const d = new Date(res.date);
         day = d.getDay();
         let a, s, holidayDate: any;
@@ -50,7 +50,7 @@ function Model(props: any) {
             let f = new Intl.DateTimeFormat("en", m);
             return f.format(t);
           }
-          return a.map(format).join(s);
+          return a?.map(format)?.join(s);
         }
 
         /* a = [ {day: '2-digit'},{month: 'numeric'},{year: 'numeric'}];

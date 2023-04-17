@@ -20,7 +20,7 @@ const Header = (props: any) => {
   // const uphead=props?.c_topHead
   const icon = props?.lhead?.icon?.map((ico: any) => {
     // console.log(ico, "icon");
-    return <img src={ico?.url} alt=""/>;
+    return <img src={ico?.url} alt="" />;
   });
 
   // nav
@@ -49,7 +49,7 @@ const Header = (props: any) => {
               alt=""
             />
 
-            <img src={headerMap} alt=""/>
+            <img src={headerMap} alt="" />
             <p>{props?.lhead?.storeLabel}</p>
           </div>
           <a href="/index.html">

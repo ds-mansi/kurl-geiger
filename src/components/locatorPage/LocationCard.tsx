@@ -55,7 +55,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
 
  
   const { address, hours, additionalHoursText,c_specific_day ,} = result.rawData;
-  console.log(result.rawData,"holidday kya hai");
+  // console.log(result.rawData,"holidday kya hai");
   var name: any = result.rawData.name?.toLowerCase();
   var mainPhone: any = result.rawData.mainPhone;
   var country: any = result.rawData.address.countryCode?.toLowerCase();
