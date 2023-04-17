@@ -392,7 +392,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // DetaipPage;
             url = url + j.slug;
           }
         });
@@ -416,7 +416,7 @@ const Location: Template<ExternalApiRenderData> = ({
             j.meta.entityType.id != "ce_city" &&
             j.meta.entityType.id != "ce_root"
           ) {
-            console.log(j, "j");
+            // console.log(j, "j");
             url = url + "/" + j.slug;
           }
         });
@@ -449,10 +449,10 @@ const Location: Template<ExternalApiRenderData> = ({
         return element.image.url;
       })
     : null;
-  console.log(document);
+  // console.log(document);
   let bannerimage = c_banner_image && c_banner_image.image.url;
 
-  console.log(_site, "DetaipPage");
+
   return (
     <>
       <JsonLd<Store>

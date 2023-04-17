@@ -30,7 +30,7 @@ function Model(props: any) {
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = "#f00";
+    // subtitle.style.color = "#f00";
   }
 
   function closeModal() {
@@ -92,7 +92,7 @@ function Model(props: any) {
 
                 {props.holidayHours ? (
                   <>
-                    <div className="font-bold text-lg  mb-4">
+                    <div className="font-bold text-lg  mb-4 ml-4">
                       {StaticData.Holdiay}
                     </div>
                     <div className="pop-up-holyhrs holiday-heading">

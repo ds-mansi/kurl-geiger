@@ -301,7 +301,7 @@ const Location: Template<ExternalApiRenderData> = ({
   // console.log(document.c_footwear,"documentc_footwear")
 
   let templateData = { document: document, __meta: __meta };
-  // console.log(_site, "DetaipPage");
+
   return (
     <>
       <JsonLd<category>

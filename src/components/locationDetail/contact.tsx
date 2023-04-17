@@ -26,7 +26,7 @@ const Contact = (props: any) => {
     c_getDirectionsCTAText,
     delivery,
   } = props;
-  console.log(delivery, "c_deliveryTime");
+  // console.log(delivery, "c_deliveryTime");
   return (
     <>
       <div className="address-main-sec">
