@@ -32,7 +32,7 @@ const shopnew = (res: shops) => {
         {res?.shop?.map((sho: any) => {
           return (
             <ul style={{ margin: "auto" }}>
-              <li>
+              <li key={sho?.shopTxt}>
                 <h2>{sho?.shopTxt}</h2>
               </li>
             </ul>
@@ -49,7 +49,7 @@ const shopnew = (res: shops) => {
                 fontSize: "13px",
               }}
             >
-              <li>
+              <li key={sho?.shopCta?.label}>
                 <p>
                   <a href={sho?.shopCta?.link}>{sho?.shopCta?.label}</a>
                 </p>

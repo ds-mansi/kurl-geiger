@@ -8,7 +8,7 @@ export const StaticData = {
     Brandname:"Kurt Geiger",
     miles:"miles",
     tempClosed:"Temporarily Closed",
-    StoreDetailbtn:"View Store Detail",
+    StoreDetailbtn:"View Detail",
     Storehighlight:"Store Highlights",
     Days:"Days",
     Hours:"Hours",

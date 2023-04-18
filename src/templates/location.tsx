@@ -618,7 +618,7 @@ const Location: Template<ExternalApiRenderData> = ({
                       fontSize: "15px",
                     }}
                   >
-                    <li>
+                    <li key={res?.label}>
                       <a href={res?.link}>{res?.label}</a>
                     </li>
                   </ul>
