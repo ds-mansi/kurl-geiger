@@ -129,13 +129,16 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
   margin-top: 17px;
 }
 .search-bx button{ @apply float-left mr-0 relative text-white text-xs sm:text-sm }
-.search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg}
+.search-bx button.useMyLocation {@apply text-dark-gray flex items-center font-second-main-font text-lg;
+  padding-right: 29rem !important;
+}
 .search-bx button.useMyLocation .icon{@apply mr-1.5}
 .search-field{@apply flex relative  }
-.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 w-12 h-12 text-center bg-red hover:bg-hover-btn}  
+.search-bx .search-btn{@apply absolute top-0 rounded-none right-0  text-white p-2 h-12 text-center bg-red hover:bg-hover-btn
+}  
 .search-bx .search-btn svg{ @apply mx-auto}
 .search-bx .search-btn {
-  width: 10rem !important;
+  width: 12rem !important;
   background-color:black;
   color: #fff;
 
@@ -143,6 +146,10 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 .search-bx .search-btn:hover{
   background-color: #ec66b0;
   color: #fff;
+}
+.search-field{
+  width: 50%;
+  margin: auto;
 }
 .search-field input{@apply  w-full bg-white h-12 text-dark-gray placeholder:text-dark-gray  py-2 pr-20 sm:py-4 sm:pr-40 pl-4 leading-7  text-[1.0625rem] font-main-font  border border-[#8c8c8c] rounded-none }
 .location p{ @apply mr-2 absolute rounded-lg -left-4 top-[0px] sm:top-[2px] xl:top-1}
@@ -174,7 +181,9 @@ body.mapView .mobile-btns .btn.mapBtn{  @apply text-Dark-red border-t-0 border-l
 #result-1 .result-inner{ @apply pt-0 md:pt-4}
 #result-1 .result-inner .availablity-content{@apply mt-2}
 .location-phn{ @apply underline hover:!no-underline text-lg }
-.fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start sm:justify-between  flex-col sm:flex-row}
+.fliter-sec{ @apply mt-2 flex items-start sm:items-center justify-start  flex-col sm:flex-row;
+  justify-content: center !important;
+}
 .location .result-inner .green-dot, .location .result-inner .red-dot{ @apply  flex justify-center items-center flex-row-reverse  }
 .location .result-inner .green-dot svg, .location .result-inner .red-dot svg{ @apply  ml-1 mt-1 }
 .location-with-filter{ @apply mb-6 flex items-center justify-between text-sm leading-5}
@@ -496,19 +505,85 @@ border: 1px solid black !important;
 
 
 /* faq */
-.faq-main-sec{@apply m-0 relative pb-7 pt-0 md:pb-12 }
-.faq-sec{@apply m-0 }
-.faq-card { @apply backdrop-blur-sm w-11/12 max-w-[43.25rem] p-4 md:p-5 pb-10 bg-white/90 mx-auto }
-.faq-card h2{@apply  py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-red  before:bg-dots before:absolute before:left-0 before:top-0  }
-.faq-tab{@apply w-full text-left mt-0 border-b border-b-box-border }
-.faq-tab .faq-tab-label{ @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-red}
-.faq-tab .faq__question-button{@apply leading-7 relative w-full text-left after:absolute after:top-3 after:right-4 after:w-5 after:h-5 md:after:w-7 md:after:h-7 after:rounded-full   after:bg-plus_icon after:bg-center after:bg-no-repeat after:bg-[length:.625rem_.625rem] md:after:bg-[length:1rem_1rem] }
-.faq-tab .faq__question-button[aria-expanded="true"]{ @apply after:bg-minus_icon}
-.faq-tab  .faq-tab-label.active{  @apply border-b-transparent before:opacity-0 }
-.faq-tab  .faq-tab-label{ @apply flex justify-between items-center relative font-normal cursor-pointer border-b border-faq-border }
-.faq-tab-content{@apply px-4  text-lg text-black py-3 bg-opacity-25 my-3 }
-.faq-tab-label.active{ @apply justify-start }
-.view-more{  @apply text-center mt-5}
+.faq-main-sec {
+  @apply m-0 relative pb-7 pt-0 md:pb-12;
+}
+.faq-sec {
+  @apply m-0;
+}
+.faq-card {
+  @apply backdrop-blur-sm w-11/12 max-w-[43.25rem] p-4 md:p-5 pb-10 bg-white/90 mx-auto;
+}
+.faq-card h2 {
+  @apply py-2 md:py-4 font-second-main-font  text-center relative text-[1.75rem] md:text-[1.75rem] uppercase text-red  before:bg-dots before:absolute before:left-0 before:top-0;
+}
+.faq-tab {
+  @apply w-full text-left mt-0 border-b border-b-box-border;
+}
+.faq-tab .faq-tab-label {
+  @apply w-full font-second-main-font text-xl border-none  text-black pl-4 pr-12 py-2.5 hover:text-red;
+}
+.faq-tab .faq__question-button {
+  @apply leading-7 relative w-full text-left after:absolute after:top-3 after:right-4 after:w-5 after:h-5 md:after:w-7 md:after:h-7 after:rounded-full   after:bg-plus_icon after:bg-center after:bg-no-repeat after:bg-[length:.625rem_.625rem] md:after:bg-[length:1rem_1rem];
+}
+.faq-tab .faq__question-button[aria-expanded="true"] {
+  @apply after:bg-minus_icon;
+}
+.faq-tab .faq-tab-label.active {
+  @apply border-b-transparent before:opacity-0;
+}
+.faq-tab .faq-tab-label {
+  @apply flex justify-between items-center relative font-normal cursor-pointer border-b border-faq-border;
+}
+.faq-tab-content {
+  @apply px-4  text-lg text-black py-3 bg-opacity-25 my-3;
+}
+.faq-tab-label.active {
+  @apply justify-start;
+}
+.view-more {
+  @apply text-center mt-5;
+}
+.faq-sec {
+  @apply pt-5 lg:pt-[10px] pb-10;
+}
+.faq-sec .container {
+  @apply max-w-[1240px];
+}
+.faq-blocks {
+  @apply px-4 lg:px-[200px] py-2 lg:py-[10px] flex flex-wrap items-start max-w-[1200px] mx-auto rounded-[1px] lg:rounded-[30px] justify-between mt-6 lg:mt-11;
+}
+.faq-blocks .faq-block h4:hover {
+  color: #ae2d87;
+}
+.faq-blocks .faq-block {
+  @apply w-full border-b  border-opacity-10;
+}
+.faq-blocks .faq-block:last-child {
+  @apply border-b-0;
+}
+.faq-blocks .faq-block h4 {
+  @apply text-base lg:text-xl  mt-0  font-medium lg:font-semibold py-4 pr-10 relative leading-6 lg:leading-7 cursor-pointer select-none;
+}
+.faq-blocks .faq-block h4 .faq-icon {
+  @apply absolute top-4 right-0 border lg:border-2  w-5 lg:w-7 h-5 lg:h-7 rounded-full z-10;
+}
+.faq-blocks .faq-block h4 .faq-icon:before {
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-2 lg:w-3 h-[1px] lg:h-0.5 bg-dark-gray;
+}
+.faq-blocks .faq-block h4 .faq-icon:after {
+  @apply content-[''] absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 h-2 lg:h-3 w-[1px] lg:w-0.5 bg-dark-gray;
+}
+.faq-blocks .faq-block.opened h4 .faq-icon:after {
+  @apply opacity-0;
+}
+.faq-blocks .faq-block .faq-content {
+  @apply max-h-0 overflow-hidden;
+}
+.faq-blocks .faq-block.opened .faq-content {
+  @apply pb-5 max-h-96;
+}
+
 
 /* near by */
 .nearby-sec{@apply bg-transparent md:bg-light-grey w-full pt-7 pb-0 md:py-[3.75rem] }

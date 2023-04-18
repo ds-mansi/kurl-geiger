@@ -89,6 +89,8 @@ export const config: TemplateConfig = {
       "dm_directoryParents.slug",
       "dm_directoryParents.dm_baseEntityCount",
       "dm_directoryParents.meta.entityType",
+      "c_faq.question",
+      "c_faq.answer",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {
@@ -284,7 +286,7 @@ export const transformProps: TransformProps<ExternalApiData> = async (
       : data.document.displayCoordinate.longitude
   }`;
 
-  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=93ed4eb95d481501ecc17410efa52034&v=20231201&resolvePlaceholders=true&entityTypes=location&limit=3`;
+  const url = `https://liveapi-sandbox.yext.com/v2/accounts/me/entities/geosearch?radius=2500&location=${data.document.yextDisplayCoordinate.latitude},${data.document.yextDisplayCoordinate.longitude}&api_key=93ed4eb95d481501ecc17410efa52034&v=20231201&resolvePlaceholders=true&entityTypes=location&limit=4`;
   // console.log/(url);
   const externalApiData = (await fetch(url).then((res: any) =>
     res.json()
@@ -326,6 +328,7 @@ const Location: Template<ExternalApiRenderData> = ({
     c_shoeSlider,
     c_holiday,
     c_kind,
+    c_faq
   } = document;
 
   let templateData = { document: document, __meta: __meta };
@@ -590,6 +593,12 @@ const Location: Template<ExternalApiRenderData> = ({
                 </a>
               </p>
             </div>
+          </div>
+          {/* faq */}
+
+          <div>
+            <h2 className="text-center mt-4 font-bold">POPULAR FAQS</h2>
+            <Faq prop={c_faq}/>
           </div>
           {/* kind Section */}
           <div>

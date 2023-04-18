@@ -295,14 +295,14 @@ const SearchLayout = (props: any): JSX.Element => {
             handleInputValue={handleInputValue}
             handleSetUserShareLocation={handleSetUserShareLocation}
           />
-
+  
           <button
             className="search-btn"
             aria-label="Search bar icon"
             id="search-location-button"
             onClick={Findinput}
           >
-            <span>Search for stores</span>
+            <span className="uppercase">Search for stores</span>
           </button>
         </div>
 
