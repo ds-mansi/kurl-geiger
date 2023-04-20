@@ -1,7 +1,11 @@
 import { useSearchActions } from "@yext/search-headless-react";
 import { useEffect, useState, useRef } from "react";
 import * as React from "react";
-import { LocationBias, Pagination } from "@yext/search-ui-react";
+import {
+  LocationBias,
+  Pagination,
+  StandardFacets,
+} from "@yext/search-ui-react";
 
 import { Location } from "../../types/search/locations";
 import LocationCard from "./LocationCard";
@@ -43,7 +47,7 @@ const SearchLayout = (props: any): JSX.Element => {
   const [check, setCheck] = useState(false);
   type FilterHandle = React.ElementRef<typeof FilterSearch>;
   const filterRef = useRef<FilterHandle>(null);
-  const locationResults = useFetchResults() || [];//view more functionality
+  const locationResults = useFetchResults() || []; //view more functionality
   const locationinbuit =
     useSearchState((state) => state.vertical?.results) || [];
   const alternateresult =
@@ -286,16 +290,16 @@ const SearchLayout = (props: any): JSX.Element => {
                 entityType: "location",
                 fieldApiName: "address.region",
               },
-              // {
-              //   entityType: "location",
-              //   fieldApiName: "address.countryCode",
+              {
+                entityType: "location",
+                fieldApiName: "address.countryCode",
 
-              // },
+              },
             ]}
             handleInputValue={handleInputValue}
             handleSetUserShareLocation={handleSetUserShareLocation}
           />
-  
+
           <button
             className="search-btn"
             aria-label="Search bar icon"
@@ -359,6 +363,10 @@ const SearchLayout = (props: any): JSX.Element => {
             </a>
           </div>
         </div>
+        <StandardFacets
+          customCssClasses={{container: "filter-items" }}
+          defaultExpanded={false}
+        ></StandardFacets>
         <div className=" map-section ">
           <GoogleMaps
             apiKey={googleApikey}
@@ -376,7 +384,7 @@ const SearchLayout = (props: any): JSX.Element => {
               <VerticalResults
                 displayAllOnNoResults={false}
                 CardComponent={LocationCard}
-                locationResults={locationResults}//view more functionality
+                locationResults={locationResults} //view more functionality
                 customCssClasses={{
                   container:
                     "result-list flex flex-col scroll-smooth  overflow-auto",
