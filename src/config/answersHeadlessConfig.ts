@@ -1,10 +1,10 @@
 
 export const AnswerExperienceConfig = {
-  limit:3,
+  limit:4,
   locale: "en_GB",
   apiKey : "beba0d94e9c0baf6788178ecefdc0559",
   verticalKey : "locations",
-  experienceKey : "kurt-geiger",
+  experienceKey : "kurt-geiger-1",
   experienceVersion: "STAGING",
   locationRadius: 804672,
   sessionTrackingEnabled: true,
