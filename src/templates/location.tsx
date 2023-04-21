@@ -111,36 +111,21 @@ export const config: TemplateConfig = {
  * take on the form: featureName/entityId
  */
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  let url = "";
-  var name: any = document.name?.toLowerCase();
-  var mainPhone: any = document.mainPhone;
-  var country: any = document.address.countryCode?.toLowerCase();
-  var region: any = document.address.region?.toLowerCase().replaceAll(" ", "-");
-  var initialregion: any = region.toString();
-  var finalregion: any = initialregion.replaceAll(" ", "-");
-  var city: any = document.address.city?.toLowerCase()?.replaceAll(" ", "-");
-  var initialrcity: any = city.toString();
-  var finalcity: any = initialrcity.replaceAll(" ", "-");
-  var string: any = name.toString();
-  let result1: any = string.replaceAll(" ", "-");
-  var link =
-    country +
-    "/" +
-    region +
-    "/" +
-    city +
-    "/" +
-    document?.slug?.toString() +
-    ".html";
-  // var link=document.id.toString()
-  // console.log(link, "link");
+  var url = "";
+  var name: any = document.name.toLowerCase();
+  var string: any = name.toString();;
+  let result: any = string.replaceAll(" ", "-");
+  document.dm_directoryParents?.map((result: any, i: number) => {
+    if (i > 0) {
+      url += result.slug + "/"
+    }
+  })
   if (!document.slug) {
-    url = `/${link}.html`;
+    url += `${result.slug}`;
   } else {
-    url = `/${link}`;
+    url += `${document.slug.toString()}`;
   }
-
-  return url;
+  return url +".html";
 };
 /**
  * Defines a list of paths which will redirect to the path created by getPath.
