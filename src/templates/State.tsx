@@ -61,16 +61,15 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  // console.log(document.slug, " document.slug");
   let url = "";
-  document?.dm_directoryParents?.map((i: any) => {
-    if (i.meta.entityType.id == "ce_country") {
+  document.dm_directoryParents.map((i: any) => {
+    if (i.meta.entityType.id == 'ce_country') {
       url += i.slug + "/";
     }
   });
   url += document.slug.toString();
 
-  return url + ".html";
+  return url + '.html';
 };
 
 // export const getRedirects: GetRedirects<TemplateProps> = ({ document }) => {
