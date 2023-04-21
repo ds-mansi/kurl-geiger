@@ -90,10 +90,10 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     if (i?.meta?.entityType?.id == "ce_country") {
       url = `${i?.slug}`;
     } else if (i?.meta?.entityType?.id == "ce_region") {
-      url = `${url}/${i?.slug}/${document?.slug?.toString()}.html`;
+      url = `${url}/${i?.slug}/${document?.slug?.toString()}`;
     }
   });
-  return url;
+  return url+".html";
 };
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
