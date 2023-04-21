@@ -270,10 +270,10 @@ const SearchLayout = (props: any): JSX.Element => {
             params={params1}
             searchOnSelect={true}
             searchFields={[
-              {
-                entityType: "location",
-                fieldApiName: "address.line1",
-              },
+              // {
+              //   entityType: "location",
+              //   fieldApiName: "address.line1",
+              // },
               {
                 entityType: "location",
                 fieldApiName: "address.postalCode",

@@ -7,7 +7,7 @@ type Faq = {
  };
 
 const Faq = (faqData: Faq) => {
-  console.log(Faq,"faqData")
+  // console.log(Faq,"faqData")
   const [faq_Data, setFaq_Data] = useState([]);
   const [faqClass, setFaqClass] = useState("");
   const [leftFaqLen, setLeftFaqLen] = useState(0);

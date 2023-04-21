@@ -77,7 +77,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     title: `${
       document.c_meta_title
         ? document.c_meta_title
-        : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+        : `Kurt Geiger Near Me - Find Kurt Geiger Branch Here.`
     }`,
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
@@ -146,7 +146,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_title
               ? document.c_meta_title
-              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Here.`
           }`,
         },
       },
@@ -182,7 +182,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
           content: `${
             document.c_meta_title
               ? document.c_meta_title
-              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Locator Here.`
+              : `Kurt Geiger Near Me - Find Kurt Geiger Branch Here.`
           }`,
         },
       },

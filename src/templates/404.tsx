@@ -63,7 +63,15 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
     return (
       <ul>
         <li>
-          <img src={slid?.sliderImg?.url} style={{ height: "19.75rem" }} alt=""/>
+          <img
+            src={slid?.sliderImg?.url}
+            style={{
+              height: "21.75rem",
+              width: "100%",
+              
+            }}
+            alt=""
+          />
         </li>
       </ul>
     );
@@ -122,7 +130,11 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
         nav={_site?.c_navbar}
       />
       <div>
-        <img src={image} style={{ position: "relative", width: "100%" }} alt=""/>
+        <img
+          src={image}
+          style={{ position: "relative", width: "100%" }}
+          alt=""
+        />
         <div className="content-list">
           <div className="container">
             <div
@@ -156,7 +168,9 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
         <p className="text-center">Some more drops for you...</p>
         <br />
         <div style={{ marginBottom: "5%" }}>
-          <div className="flex ">{slide}</div>
+          <div className="flex" style={{ justifyContent: "center" }}>
+            {slide}
+          </div>
           <div className="flex bg-[#f7f7f9]">{text}</div>
           <div className="flex ">{name}</div>
           <div className="flex ">{pname}</div>
