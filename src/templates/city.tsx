@@ -85,15 +85,14 @@ export const config: TemplateConfig = {
 };
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
-  var url: any = ""
+  var url: any = "";
   document.dm_directoryParents.map((i: any) => {
-    if (i.meta.entityType.id == 'ce_country') {
-      url = `${i.slug}`
+    if (i.meta.entityType.id == "ce_country") {
+      url = `${i.slug}`;
+    } else if (i.meta.entityType.id == "ce_region") {
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`;
     }
-    else if (i.meta.entityType.id == 'ce_region') {
-      url = `${url}/${i.slug}/${document.slug.toString()}.html`
-    }
-  })
+  });
   return url;
 };
 
@@ -103,11 +102,11 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   document,
 }): HeadConfig => {
   var canonical = "";
-  document?.dm_directoryChildren?.map((entity: any) => {
+  document.dm_directoryChildren.map((entity: any) => {
     canonical =
-      entity.address.countryCode?.toLowerCase().replaceAll(" ", "-") +
+      entity.address.countryCode.toLowerCase().replaceAll(" ", "-") +
       "/" +
-      entity.address.region?.toLowerCase().replaceAll(" ", "-");
+      entity.address.region.toLowerCase().replaceAll(" ", "-");
   });
 
   return {
@@ -229,7 +228,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           name: "twitter:url",
           content: `/${
-            document.slug ? document.slug : `${document.name?.toLowerCase()}`
+            document.slug ? document.slug : `${document.name.toLowerCase()}`
           }.html`,
         },
       },
@@ -275,18 +274,18 @@ const City: Template<TemplateRenderProps> = ({
   var instagramHandle;
   var twitterHandle;
   var c_tikTok;
-  var sortedChildren = dm_directoryChildren?.sort(function (a: any, b: any) {
+  var sortedChildren = dm_directoryChildren.sort(function (a: any, b: any) {
     var a = a.name;
     var b = b.name;
     return a < b ? -1 : a > b ? 1 : 0;
   });
 
   let slugString = "";
-  document.dm_directoryParents?.forEach((e: any) => {
+  document.dm_directoryParents.forEach((e: any) => {
     slugString += e.slug + "/";
   });
 
-  const childrenDivs = dm_directoryChildren?.map((entity: any) => {
+  const childrenDivs = dm_directoryChildren.map((entity: any) => {
     // console.log(entity);
     var origin: any = null;
     if (entity.address.city) {
@@ -298,16 +297,16 @@ const City: Template<TemplateRenderProps> = ({
     }
     // let key: any = Object.keys(entity.hours)[0];
     var url = "";
-    var name: any = entity.name?.toLowerCase();
-    var region: any = entity.address.region?.toLowerCase();
-    var country: any = entity.address.countryCode?.toLowerCase();
-    var initialregion: any = region?.toString();
-    var finalregion: any = initialregion?.replaceAll(" ", "-");
-    var city: any = entity.address.city?.toLowerCase();
-    var initialrcity: any = city?.toString();
-    var finalcity: any = initialrcity?.replaceAll(" ", "-");
-    var string: any = name?.toString();
-    let result: any = string?.replaceAll(" ", "-");
+    var name: any = entity.name.toLowerCase();
+    var region: any = entity.address.region.toLowerCase();
+    var country: any = entity.address.countryCode.toLowerCase();
+    var initialregion: any = region.toString();
+    var finalregion: any = initialregion.replaceAll(" ", "-");
+    var city: any = entity.address.city.toLowerCase();
+    var initialrcity: any = city.toString();
+    var finalcity: any = initialrcity.replaceAll(" ", "-");
+    var string: any = name.toString();
+    let result: any = string.replaceAll(" ", "-");
     // console.log(entity.slug,"object")
     var link =
       country + "/" + region + "/" + city + "/" + entity.slug + ".html";
@@ -401,7 +400,7 @@ const City: Template<TemplateRenderProps> = ({
               <GetDirection
                 buttonText={StaticData.getDirection}
                 address={entity.address}
-                latitude={entity?.yextDisplayCoordinate?.latitude}
+                latitude={entity.yextDisplayCoordinate.latitude}
                 longitude={entity.yextDisplayCoordinate.longitude}
               />
             </div>
@@ -438,7 +437,7 @@ const City: Template<TemplateRenderProps> = ({
         // }
         var getDirectionUrl =
           "https://www.google.com/maps/dir/?api=1&destination=" +
-          entitiy?.yextDisplayCoordinate?.latitude +
+          entitiy.yextDisplayCoordinate.latitude +
           "," +
           entitiy.yextDisplayCoordinate.longitude +
           "&origin=" +
@@ -446,13 +445,13 @@ const City: Template<TemplateRenderProps> = ({
 
         window.open(getDirectionUrl, "_blank");
       };
-      navigator.geoentity?.getCurrentPosition(
+      navigator.geoentity.getCurrentPosition(
         function (position: any) {
-          let currentLatitude = position.coords?.latitude;
+          let currentLatitude = position.coords.latitude;
           let currentLongitude = position.coords.longitude;
           let getDirectionUrl =
             "https://www.google.com/maps/dir/?api=1&destination=" +
-            entitiy?.yextDisplayCoordinate?.latitude +
+            entitiy.yextDisplayCoordinate.latitude +
             "," +
             entitiy.yextDisplayCoordinate.longitude +
             "&origin=" +
@@ -469,7 +468,7 @@ const City: Template<TemplateRenderProps> = ({
     }
   }
   c_globalData &&
-    c_globalData?.map((i: any) => {
+    c_globalData.map((i: any) => {
       address = i.address ? i.address : [];
       c_companyrn = i.c_companyrn ? i.c_companyrn : "";
       c_footerLinks = i.c_footerLinks ? i.c_footerLinks : [];
@@ -483,20 +482,20 @@ const City: Template<TemplateRenderProps> = ({
 
   var url: any = "";
 
-  document.dm_directoryParents?.map((i: any) => {
+  document.dm_directoryParents.map((i: any) => {
     if (i.meta.entityType.id == "ce_country") {
       url = `${i.slug}`;
     } else if (i.meta.entityType.id == "ce_region") {
-      url = `${url}/${i.slug}/${document.slug?.toString()}.html`;
+      url = `${url}/${i.slug}/${document.slug.toString()}.html`;
     }
   });
   let breadcrumbScheme: any = [];
   let currentIndex: any = 0;
   dm_directoryParents &&
-    dm_directoryParents?.map((i: any, index: any) => {
+    dm_directoryParents.map((i: any, index: any) => {
       currentIndex = index;
       if (index != 0) {
-        breadcrumbScheme?.push({
+        breadcrumbScheme.push({
           "@type": "ListItem",
           position: index,
           item: {
@@ -507,11 +506,11 @@ const City: Template<TemplateRenderProps> = ({
       }
     });
 
-  breadcrumbScheme?.push({
+  breadcrumbScheme.push({
     "@type": "ListItem",
     position: currentIndex + 1,
     item: {
-      "@id": `${constant.stagingBaseurl}/${document.slug?.toString()}.html`,
+      "@id": `${constant.stagingBaseurl}/${document.slug.toString()}.html`,
       name: document.name,
     },
   });
