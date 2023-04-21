@@ -62,12 +62,12 @@ export const config: TemplateConfig = {
 
 export const getPath: GetPath<TemplateProps> = ({ document }) => {
   let url = "";
-  document.dm_directoryParents.map((i: any) => {
+  document.dm_directoryParents?.map((i: any) => {
     if (i.meta.entityType.id == 'ce_country') {
       url += i.slug + "/";
     }
   });
-  url += document.slug.toString();
+  url += document.slug?.toString();
 
   return url + '.html';
 };
@@ -83,7 +83,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
 }): HeadConfig => {
   var canonical = "";
   document?.dm_directoryParents?.map((entity: any) => {
-    canonical = entity.slug.toLowerCase();
+    canonical = entity.slug?.toLowerCase();
   });
 
   return {
@@ -205,7 +205,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         attributes: {
           name: "twitter:url",
           content: `/${
-            document.slug ? document.slug : `${document.name.toLowerCase()}`
+            document.slug ? document.slug : `${document.name?.toLowerCase()}`
           }.html`,
         },
       },
@@ -255,9 +255,9 @@ const region: Template<TemplateRenderProps> = ({
     dm_directoryChildren?.map((entity: any) => {
       let url: any = "";
 
-      url = document.slug.toString();
+      url = document.slug?.toString();
       let url1: any = "";
-      url1 = url.replace(/(\b\S.+\b)(?=.*\1)/g, "").trim();
+      url1 = url?.replace(/(\b\S.+\b)(?=.*\1)/g, "").trim();
       if (entity?.dm_baseEntityCount == 1) {
         if (
           entity.dm_directoryChildren &&
@@ -284,14 +284,14 @@ const region: Template<TemplateRenderProps> = ({
             </div>
           );
         } else {
-          let name: any = entity.dm_directoryChildren[0].name.toLowerCase();
-          let string: any = name.toString();
-          let removeSpecialCharacters = string.replace(
+          let name: any = entity.dm_directoryChildren[0].name?.toLowerCase();
+          let string: any = name?.toString();
+          let removeSpecialCharacters = string?.replace(
             /[&\/\\#^+()$~%.'":*?<>{}!@]/g,
             ""
           );
-          let result: any = removeSpecialCharacters.replaceAll("  ", "-");
-          let finalString: any = result.replaceAll(" ", "-");
+          let result: any = removeSpecialCharacters?.replaceAll("  ", "-");
+          let finalString: any = result?.replaceAll(" ", "-");
           url = `${entity.dm_directoryChildren[0].id}-${finalString}.html`;
           return (
             <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">
@@ -330,7 +330,7 @@ const region: Template<TemplateRenderProps> = ({
     dm_directoryParents?.map((i: any, index: any) => {
       currentIndex = index;
       if (index != 0) {
-        breadcrumbScheme.push({
+        breadcrumbScheme?.push({
           "@type": "ListItem",
           position: index,
           item: {
@@ -340,13 +340,13 @@ const region: Template<TemplateRenderProps> = ({
         });
       }
     });
-  breadcrumbScheme.push({
+  breadcrumbScheme?.push({
     "@type": "ListItem",
     position: currentIndex + 1,
     item: {
       "@id": `${stagingBaseurl}${
         dm_directoryParents[1].slug
-      }/${document.slug.toString()}.html`,
+      }/${document.slug?.toString()}.html`,
       name: document.name,
     },
   });
