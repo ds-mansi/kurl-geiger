@@ -124,14 +124,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   var string: any = name.toString();
   let result1: any = string.replaceAll(" ", "-");
   var link =
-    country +
-    "/" +
-    region +
-    "/" +
-    city +
-    "/" +
-    document?.slug?.toString() +
-    ".html";
+    country +"/" +region +"/" +city +"/" +document?.slug?.toString() +".html";
   // var link=document.id.toString()
   // console.log(link, "link");
   if (!document.slug) {

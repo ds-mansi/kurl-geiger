@@ -479,7 +479,7 @@ function UnwrappedGoogleMaps({
     var phone = result.rawData.mainPhone;
     const name: any = result.rawData.name?.toLowerCase();
     var country: any = result.rawData.address.countryCode?.toLowerCase();
-    const region: any = result.rawData.address.region?.toLowerCase();
+    const region: any = result.rawData.address.region?.toLowerCase().replaceAll(" ", "-");
     const initialregion: any = region.toString();
     const finalregion: any = initialregion.replaceAll(" ", "-");
     const city: any = result.rawData.address.city?.toLowerCase();

@@ -293,7 +293,6 @@ const SearchLayout = (props: any): JSX.Element => {
               {
                 entityType: "location",
                 fieldApiName: "address.countryCode",
-
               },
             ]}
             handleInputValue={handleInputValue}
@@ -364,7 +363,7 @@ const SearchLayout = (props: any): JSX.Element => {
           </div>
         </div>
         <StandardFacets
-          customCssClasses={{container: "filter-items" }}
+          customCssClasses={{ container: "filter-items" }}
           defaultExpanded={false}
         ></StandardFacets>
         <div className=" map-section ">
