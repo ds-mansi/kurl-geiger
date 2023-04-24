@@ -400,7 +400,7 @@ const City: Template<TemplateRenderProps> = ({
               <GetDirection
                 buttonText={StaticData.getDirection}
                 address={entity.address}
-                latitude={entity.yextDisplayCoordinate.latitude}
+                latitude={entity?.yextDisplayCoordinate?.latitude}
                 longitude={entity.yextDisplayCoordinate.longitude}
               />
             </div>
@@ -437,7 +437,7 @@ const City: Template<TemplateRenderProps> = ({
         // }
         var getDirectionUrl =
           "https://www.google.com/maps/dir/?api=1&destination=" +
-          entitiy.yextDisplayCoordinate.latitude +
+          entitiy?.yextDisplayCoordinate?.latitude +
           "," +
           entitiy.yextDisplayCoordinate.longitude +
           "&origin=" +
@@ -447,11 +447,11 @@ const City: Template<TemplateRenderProps> = ({
       };
       navigator.geoentity.getCurrentPosition(
         function (position: any) {
-          let currentLatitude = position.coords.latitude;
+          let currentLatitude = position?.coords?.latitude;
           let currentLongitude = position.coords.longitude;
           let getDirectionUrl =
             "https://www.google.com/maps/dir/?api=1&destination=" +
-            entitiy.yextDisplayCoordinate.latitude +
+            entitiy?.yextDisplayCoordinate?.latitude +
             "," +
             entitiy.yextDisplayCoordinate.longitude +
             "&origin=" +
