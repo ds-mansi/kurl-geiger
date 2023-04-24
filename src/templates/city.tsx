@@ -401,7 +401,7 @@ const City: Template<TemplateRenderProps> = ({
                 buttonText={StaticData.getDirection}
                 address={entity.address}
                 latitude={entity?.yextDisplayCoordinate?.latitude}
-                longitude={entity.yextDisplayCoordinate.longitude}
+                longitude={entity?.yextDisplayCoordinate?.longitude}
               />
             </div>
           </div>
@@ -439,7 +439,7 @@ const City: Template<TemplateRenderProps> = ({
           "https://www.google.com/maps/dir/?api=1&destination=" +
           entitiy?.yextDisplayCoordinate?.latitude +
           "," +
-          entitiy.yextDisplayCoordinate.longitude +
+          entitiy?.yextDisplayCoordinate?.longitude +
           "&origin=" +
           origin;
 
@@ -453,7 +453,7 @@ const City: Template<TemplateRenderProps> = ({
             "https://www.google.com/maps/dir/?api=1&destination=" +
             entitiy?.yextDisplayCoordinate?.latitude +
             "," +
-            entitiy.yextDisplayCoordinate.longitude +
+            entitiy?.yextDisplayCoordinate?.longitude +
             "&origin=" +
             currentLatitude +
             "," +
