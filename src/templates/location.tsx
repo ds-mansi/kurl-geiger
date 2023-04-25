@@ -489,12 +489,15 @@ const Location: Template<ExternalApiRenderData> = ({
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
+          {/* header section */}
           <Header
             _site={_site}
             lhead={_site?.c_lowerHeader}
             nav={_site?.c_navbar}
           />
+          {/* banner section */}
           <PageLayout global={_site} banner={_site?.c_bannerImage} />
+          {/* breadcrumb */}
           <BreadCrumbs
             name={name}
             parents={dm_directoryParents}
@@ -619,6 +622,7 @@ const Location: Template<ExternalApiRenderData> = ({
               })}
             </div>
           </div>
+          {/* kind section end */}
           <div className="nearby-sec">
             <div className="container">
               <div className="sec-title">
@@ -634,12 +638,14 @@ const Location: Template<ExternalApiRenderData> = ({
                 )}
               </div>
             </div>
+            {/* view more btn */}
             <a className="view-more-btn" href="/index.html">
               <p style={{ textTransform: "uppercase", paddingLeft: "20%" }}>
                 View More Location
               </p>
             </a>
           </div>
+          {/* footer section */}
           <Footer _site={_site} footer={_site?.c_footer} />
         </AnalyticsScopeProvider>
       </AnalyticsProvider>

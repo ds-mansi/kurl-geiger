@@ -884,3 +884,7 @@ div#react-collapsed-panel-1,div#react-collapsed-panel-2 {
   background-color: aliceblue;
   width: 98% !important;
 }
+
+.signup-btn:hover{
+  background-color: #333333;
+}

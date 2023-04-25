@@ -482,11 +482,11 @@ function UnwrappedGoogleMaps({
     const region: any = result.rawData.address.region?.toLowerCase().replaceAll(" ", "-");
     const initialregion: any = region.toString();
     const finalregion: any = initialregion.replaceAll(" ", "-");
-    const city: any = result.rawData.address.city?.toLowerCase();
+    const city: any = result.rawData.address.city?.toLowerCase().replaceAll(" ", "-");
     const initialrcity: any = city.toString();
     const finalcity: any = initialrcity.replaceAll(" ", "-");
     const string1: any = name.toString();
-    const result1: any = string1.replaceAll(" ", "-");
+    const result1: any = string1.replaceAll(" ", "-").replaceAll(" ", "-");
     var link =
       country +
       "/" +

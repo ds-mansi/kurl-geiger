@@ -54,6 +54,7 @@ const Footer = (props: any) => {
           className="flex pl-9"
           style={{ paddingTop: "40px", color: "#333333", width: "100%" }}
         >
+          {/* footer nav start */}
           <div className="flex" style={{ width: "60%" }}>
             <div>
               <h3 className="footernav">{props?.footer?.footerHeading}</h3>
@@ -74,6 +75,8 @@ const Footer = (props: any) => {
               </ul>
             </div>
           </div>
+          {/* footer nav end */}
+          {/* footer kind section start */}
           <div style={{ width: "40%" }}>
             <p
               style={{
@@ -85,11 +88,46 @@ const Footer = (props: any) => {
             >
               {props?._site?.c_signUp?.signUpText}
             </p>
+            <div className="p-1 ">
+              <form>
+                <input
+                  type="text"
+                  placeholder="Enter your Email..."
+                  className="border-b-2"
+                  style={{ width: "60%", padding: "5px", marginRight: "5px" }}
+                />
+                <a
+                  href="#"
+                  className="signup-btn"
+                  style={{
+                    padding: "8px 45px",
+                    border: "1px solid black",
+                    backgroundColor: "#ffffff",
+                  }}
+                >
+                  SIGN UP
+                </a>
+              </form>
+              <div className="p-2">
+                <input
+                  type="radio"
+                  id="Men"
+                  name="gender"
+                  value="Men"
+                />
+                <label style={{fontSize:'20px',paddingRight:"20px",}}>Men</label>
+
+                <input type="radio" id="Women" name="gender" value="Women" />
+                <label style={{fontSize:'20px'}}>Women</label>
+              </div>
+            </div>
             <p style={{ fontSize: "16px", marginRight: "10%" }}>
               {props?._site?.c_signUp?.privacyPolicy}
             </p>
           </div>
         </div>
+        {/* footer kind section end */}
+        {/* t and c section start  */}
         <div
           className="flex"
           style={{ paddingBottom: "45px", justifyContent: "center" }}
@@ -97,6 +135,7 @@ const Footer = (props: any) => {
           <p style={{ paddingRight: "25px", fontSize: "15px" }}>
             {props?._site?.c_terms?.tAndC}
           </p>
+
           <a
             href={props?._site?.c_terms?.preference?.link}
             style={{ textDecoration: "underline" }}
@@ -104,6 +143,7 @@ const Footer = (props: any) => {
             {props?._site?.c_terms?.preference?.label}
           </a>
         </div>
+        {/* t and c end */}
       </div>
     </>
   );

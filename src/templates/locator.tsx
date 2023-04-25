@@ -235,6 +235,7 @@ const Locator: Template<TemplateRenderProps> = ({ document, __meta }) => {
       >
         {" "}
         <AnalyticsScopeProvider name={""}>
+          {/* header */}
           <Header
             _site={_site}
             lhead={_site?.c_lowerHeader}
@@ -251,7 +252,7 @@ const Locator: Template<TemplateRenderProps> = ({ document, __meta }) => {
           >
             <SearchLayout _site={_site} />
           </SearchHeadlessProvider>
-
+        {/* footer */}
           <Footer _site={_site} footer={_site?.c_footer} />
         </AnalyticsScopeProvider>
       </AnalyticsProvider>
