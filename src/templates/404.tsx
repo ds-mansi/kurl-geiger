@@ -68,7 +68,6 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
             style={{
               height: "21.75rem",
               width: "100%",
-              
             }}
             alt=""
           />
@@ -124,11 +123,13 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
   });
   return (
     <>
+      {/* Header section */}
       <Header
         _site={_site}
         lhead={_site?.c_lowerHeader}
         nav={_site?.c_navbar}
       />
+      {/* 404 banner start  */}
       <div>
         <img
           src={image}
@@ -164,6 +165,8 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
           </div>
         </div>
       </div>
+      {/* 404 banner end  */}
+      {/* suggestions section start */}
       <div>
         <p className="text-center">Some more drops for you...</p>
         <br />
@@ -177,6 +180,7 @@ const FourOhFour: Template<TemplateRenderProps> = ({ document }) => {
           <div className="flex ">{price}</div>
         </div>
       </div>
+      {/* suggestions section end */}
       <Footer _site={_site} footer={_site?.c_footer} />
     </>
   );

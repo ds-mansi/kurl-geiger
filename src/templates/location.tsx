@@ -237,8 +237,15 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
       {
         type: "meta",
         attributes: {
-          name: "twitter:card",
-          content: "summary",
+          property: "og:image",
+          content: favicon,
+        },
+      },
+      {
+        type: "meta",
+        attributes: {
+          name: "twitter:image",
+          content: "favicon",
         },
       },
       {
@@ -298,6 +305,7 @@ const Location: Template<ExternalApiRenderData> = ({
   __meta,
   externalApiData,
 }) => {
+  // streaming
   const {
     _site,
     address,
@@ -599,10 +607,10 @@ const Location: Template<ExternalApiRenderData> = ({
           {/* kind Section */}
           <div>
             <img src={c_kind?.kindBanner?.url} style={{ width: "100%" }} alt=""/>
-            <h1 className="text-center bg-[#f17f0d] text-9xl p-9">
+            <p className="text-center bg-[#f17f0d] text-9xl p-9">
               <span>£</span>
               {c_kind?.kindNum}
-            </h1>
+            </p>
             <div className="flex bg-[#f17f0d] pb-2">
               {c_kind?.kindNa?.map((res: any) => {
                 // console.log(res,"res")
