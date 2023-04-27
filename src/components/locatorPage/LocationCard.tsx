@@ -136,7 +136,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             
             <div className="icon-row content-col address-with-availablity notHighlight">
               <Address address={address} />
-              <div className="flex mt-2">
+              <div className="flex mt-2 w-[30rem]">
                   <img src={phone} style={{ height: "20px" }} alt=""/>
 
                   <a href={"tel:" + mainPhone} style={{ fontSize: "15px"}}>
@@ -150,7 +150,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 />
               {result.rawData.hours ? (
                   <>
-                    <div className="open-close ">
+                    <div className="open-close w-[30rem] ">
                       <div className="flex mt-2">
                         <img
                           src={timesvg}
@@ -192,7 +192,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                               </button>
                             </div>
                           </div>
-                          <div className={timeStatus + " daylist"}>
+                          <div className={timeStatus + " daylist w-[80%]"}>
                             <Hours
                               key={result.rawData.id}
                               hours={hours}
