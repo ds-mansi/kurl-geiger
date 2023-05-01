@@ -163,6 +163,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
+      // meta tags
       {
         type: "meta",
         attributes: {
@@ -454,7 +455,6 @@ const Location: Template<ExternalApiRenderData> = ({
       })
     : null;
   // console.log(document);
-  let bannerimage = c_banner_image && c_banner_image.image.url;
 
 
   return (

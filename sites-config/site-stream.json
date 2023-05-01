@@ -1,23 +1,27 @@
 {
   "$id": "site-entity",
   "filter": {
-    "entityIds": ["global-data"]
+    "entityIds": [
+      "global-data"
+    ]
   },
   "source": "knowledgeGraph",
   "fields": [
-      "name",
-      "c_topHead",
-      "c_navbar",
-      "c_lowerHeader",
-      "c_footer",
-      "c_signUp",
-      "c_terms",
-      "c_bannerImage",
-      "c_globalSlider",
-      "c_searchBy"
+    "name",
+    "c_topHead",
+    "c_navbar",
+    "c_lowerHeader",
+    "c_footer",
+    "c_signUp",
+    "c_terms",
+    "c_bannerImage",
+    "c_globalSlider",
+    "c_searchBy"
   ],
   "localization": {
-    "locales": ["en_GB"],
+    "locales": [
+      "en_GB"
+    ],
     "primary": false
   }
 }

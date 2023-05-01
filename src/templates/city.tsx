@@ -360,15 +360,8 @@ const City: Template<TemplateRenderProps> = ({
 
             <div className="icon-row">
               <div className="content-col open-now-string flex">
-              <img
-                    className=""
-                    src={timesvg}
-                    width="20"
-                    height="20"
-                    alt=""
-                  />
+                <img className="" src={timesvg} width="20" height="20" alt="" />
                 {typeof entity?.hours?.reopenDate != "undefined" ? (
-                  
                   <h6>{StaticData.tempClosed}</h6>
                 ) : (
                   <OpenClose timezone={entity.timezone} hours={entity.hours} />
@@ -538,7 +531,7 @@ const City: Template<TemplateRenderProps> = ({
         lhead={_site?.c_lowerHeader}
         nav={_site?.c_navbar}
       />
-      
+
       <BreadCrumbs
         name={name}
         address={address}

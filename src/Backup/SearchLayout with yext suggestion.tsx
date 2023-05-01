@@ -29,20 +29,14 @@ import {
   UseMylocationsvg,
 } from "../../../sites-global/global";
 import { StaticData } from "../../../sites-global/staticData";
-import {
-  googleMapsConfig,
-} from "../../config/answersHeadlessConfig";
+
 import FilterSearch from "../locatorPage/FilterSearch";
 import ViewMore from "./ViewMore";
 import VerticalResults from "../VerticalResults";
 import ResultsCount from "./ResultsCount";
-import {
-  Matcher,
-  SelectableFilter,
-} from "@yext/search-headless-react";
+
 import { Link } from "@mui/material";
 import { AnswerExperienceConfig } from "../../config/answersHeadlessConfig";
-import { Wrapper } from "@googlemaps/react-wrapper";
 
 var params1: any = { latitude: center_latitude, longitude: center_longitude };
 var mapzoom = 8;
@@ -67,11 +61,9 @@ const SearchLayout = (props: any): JSX.Element => {
   const searchActions = useSearchActions();
   const state = useSearchState((s) => s) || [];
   const [optionclick, setOptionClick] = useState(true);
-  const [filterValue, setFilterValue] = useState([]);
+
   const loading = useSearchState((s) => s.searchStatus.isLoading);
-  const inputRef = React.useRef<HTMLInputElement>(null);
-  const [facetData, setFacetData] = useState("");
-  let googleLib = typeof google !== "undefined" ? google : null;
+
   var searchKey: any;
   var target;
 
@@ -139,7 +131,7 @@ const SearchLayout = (props: any): JSX.Element => {
               }
             },
             (error: any) => {
-              // console.error(error);
+              console.error(error);
               setCheck(false);
             }
           );
@@ -171,7 +163,7 @@ const SearchLayout = (props: any): JSX.Element => {
     if (searchKey[0].value != "") {
       getCoordinates(Search);
     }
-    // console.log(locationinbuit.length, "fisttimedispaly");
+    console.log(locationinbuit.length, "fisttimedispaly");
     if (locationinbuit.length == 0) {
       setDisplaymsg(true);
     } else {
@@ -179,67 +171,11 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   };
 
-  const Findinput2 = () => {
-    let Search = inputRef.current?.value || "";
-    let locationHub: any = []
-    // alert("hello")
-    if (Search.length == 0) {
-      // console.log("bajrang")
-      const bounds = new google.maps.LatLngBounds();
-      bounds.extend({
-        lat: googleMapsConfig.centerLatitude,
-        lng: googleMapsConfig.centerLongitude,
-      });
-      searchActions.setVertical("locations");
-      searchActions.setQuery("");
-
-      if (filterValue.length > 0) {
-        // setShowFilterEmptyMsg(true);
-        let location: SelectableFilter = {
-          selected: true,
-          fieldId: "c_relatedAdvantages.name",
-          value: filterValue[0],
-          matcher: Matcher.Equals,
-        };
-        locationHub.push(location);
-
-        if (filterValue.length > 1) {
-          let location2: SelectableFilter = {
-            selected: true,
-            fieldId: "c_glassdriveAdvantages",
-            value: filterValue[1],
-            matcher: Matcher.Equals,
-          };
-          locationHub.push(location2);
-        }
-
-        if (facetData != "") {
-          let facet_core: SelectableFilter = {
-            selected: false,
-            fieldId: "c_typesDeVéhicules",
-            value: facetData,
-            matcher: Matcher.Equals,
-          };
-          locationHub.push(facet_core);
-        }
-      } else {
-        locationHub = []
-      }
-      searchActions.setStaticFilters(locationHub);
-      searchActions.setOffset(0);
-      searchActions.setVerticalLimit(AnswerExperienceConfig.limit);
-      searchActions.executeVerticalQuery();
-      getCoordinates(Search);
-    }
-  };
-
-
-
   const handleInputValue = () => {
     setInputValue("");
   };
   const handleSetUserShareLocation = (value: any, userShareStatus: boolean) => {
-    // console.log(value, center_latitude, center_longitude, "value");
+    console.log(value, center_latitude, center_longitude, "value");
     setInputValue(value);
     if (userShareStatus) {
       setCenterLatitude(center_latitude);
@@ -274,7 +210,7 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   }, [locationinbuit]);
   useEffect(() => {
-    // console.log("yes rerender");
+    console.log("yes rerender");
     locationResults.map((result: any, index: number) => {
       const resultelement = document.querySelectorAll(
         `.result-list-inner-${index + 1}`
@@ -297,111 +233,8 @@ const SearchLayout = (props: any): JSX.Element => {
     }
   }, []);
 
-  const [autocomplete, setAutocomplete] = useState<google.maps.places.Autocomplete>();
-
-  useEffect(() => {
-
-    // to set value header search input value to locator search while google suggestion.
-    let params = (new URL(window.location.href)).searchParams;
-    let addresssearch = params.get("inputStoreValue");
-    if (addresssearch) {
-      getCoordinates(addresssearch);
-      document.getElementById("pac-input")?.setAttribute("value", addresssearch);
-    }
-
-    if (googleLib && typeof google.maps === "object") {
-      let pacInput: any = document?.getElementById("pac-input");
-      let options: any = {
-        options: {
-          types: ["geocode"],
-          componentRestrictions: { country: params1 },
-          strictBounds: false,
-          fields: ["address_components", "geometry", "icon", "name"],
-        },
-      };
-      const autoComplete = new google.maps.places.Autocomplete(
-        pacInput,
-        options
-      );
-      if (autoComplete) {
-        function pacSelectFirst(input: HTMLInputElement) {
-          var _addEventListener = input.addEventListener;
-
-          function addEventListenerWrapper(type: string, listener: any) {
-            if (type == "keydown") {
-              var orig_listener = listener;
-
-              listener = function (event: { which: number }) {
-                var suggestion_selected = $(".pac-item-selected").length > 0;
-
-                if (
-                  (event.which == 13 || event.which == 9) &&
-                  !suggestion_selected
-                ) {
-                  var simulated_downarrow = $.Event("keydown", {
-                    keyCode: 40,
-                    which: 40,
-                  });
-                  orig_listener.apply(input, [simulated_downarrow]);
-                }
-
-                orig_listener.apply(input, [event]);
-              };
-            }
-
-            _addEventListener.apply(input, [type, listener]);
-          }
-
-          if (input.addEventListener) {
-            input.addEventListener = addEventListenerWrapper;
-          }
-        }
-
-        setAutocomplete(autoComplete);
-        pacSelectFirst(pacInput);
-        $("#search-location-button")
-          .off("click")
-          .on("click", function () {
-            var keydown = document.createEvent("HTMLEvents");
-            keydown.initEvent("keydown", true, false);
-            Object.defineProperty(keydown, "keyCode", {
-              get: function () {
-                return 13;
-              },
-            });
-            Object.defineProperty(keydown, "which", {
-              get: function () {
-                return 13;
-              },
-            });
-            pacInput.dispatchEvent(keydown);
-          });
-
-        google.maps.event.addListener(
-          autoComplete,
-          "place_changed",
-          function () {
-            const searchKey: any = pacInput.value;
-            if (searchKey) {
-              getCoordinates(searchKey);
-            }
-          }
-        );
-      }
-    }
-    return () => {
-      if (autocomplete) {
-        autocomplete.unbindAll();
-      }
-    };
-  }, [googleLib]);
-
   return (
     <>
-     <Wrapper
-        apiKey={googleMapsConfig.googleMapsApiKey}
-        libraries={["places", "geometry"]}
-      >
       {/* {loader} */}
       <div className="breadcrumb">
         <div className="container-custom">
@@ -423,7 +256,7 @@ const SearchLayout = (props: any): JSX.Element => {
           </div> */}
 
         <div className="search-field">
-          {/* <FilterSearch
+          <FilterSearch
             ref={filterRef}
             displaymsg={displaymsg}
             setDisplaymsg={setDisplaymsg}
@@ -437,10 +270,10 @@ const SearchLayout = (props: any): JSX.Element => {
             params={params1}
             searchOnSelect={true}
             searchFields={[
-              {
-                entityType: "location",
-                fieldApiName: "address.line1",
-              },
+              // {
+              //   entityType: "location",
+              //   fieldApiName: "address.line1",
+              // },
               {
                 entityType: "location",
                 fieldApiName: "address.postalCode",
@@ -461,35 +294,10 @@ const SearchLayout = (props: any): JSX.Element => {
                 entityType: "location",
                 fieldApiName: "address.countryCode",
               },
-              {
-                entityType: "location",
-                fieldApiName: "builtin.location",
-              },
             ]}
             handleInputValue={handleInputValue}
             handleSetUserShareLocation={handleSetUserShareLocation}
-          /> */}
-
-           <input
-                id="pac-input"
-                type="text"
-
-                ref={inputRef}
-                placeholder="Search with Yext or enter address..."
-                className="text-sm bg-white outline-none h-9 w-full p-2 rounded-md border border-gray-300 focus:border-blue-600 FilterSearchInput"
-                onChange={() => Findinput2()}
-
-                onKeyDown={(evt) => {
-                  if (
-                    evt.key === "Backspace" ||
-                    evt.key === "x" ||
-                    evt.key === "Delete"
-                  ) {
-                    Findinput2();
-                  }
-                }}
-
-              />
+          />
 
           <button
             className="search-btn"
@@ -609,7 +417,6 @@ const SearchLayout = (props: any): JSX.Element => {
           </PerfectScrollbar>
         </div>
       </div>
-      </Wrapper>
     </>
   );
 };

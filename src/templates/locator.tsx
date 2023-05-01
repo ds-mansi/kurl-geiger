@@ -82,6 +82,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
     charset: "UTF-8",
     viewport: "width=device-width, initial-scale=1",
     tags: [
+      // meta tags
       {
         type: "meta",
         attributes: {

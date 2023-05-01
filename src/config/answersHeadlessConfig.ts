@@ -6,7 +6,7 @@ export const AnswerExperienceConfig = {
   verticalKey : "locations",
   experienceKey : "kurt-geiger-1",
   experienceVersion: "STAGING",
-  locationRadius: 804672,
+  locationRadius: 904672,
   sessionTrackingEnabled: true,
   endpoints: {
     universalSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/query",
@@ -17,4 +17,10 @@ export const AnswerExperienceConfig = {
     filterSearch: "https://liveapi-sandbox.yext.com/v2/accounts/me/answers/filtersearch",
 
   }
+  
 }
+export const googleMapsConfig =  {
+  centerLatitude:38.573936,
+  centerLongitude: -92.603760,
+  googleMapsApiKey: "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18"
+};
