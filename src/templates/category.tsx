@@ -83,6 +83,9 @@ export const config: TemplateConfig = {
       "c_accessories.c_products",
       "c_bags.c_products",
       "c_footwear.c_productBanner",
+      "c_offers.c_products",
+      "c_vacation.c_products",
+      "c_vacation.c_productBanner",
     ],
     // Defines the scope of entities that qualify for this stream.
     filter: {

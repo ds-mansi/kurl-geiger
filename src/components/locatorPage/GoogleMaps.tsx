@@ -81,7 +81,7 @@ const builtInCssClasses: Readonly<GoogleMapsCssClasses> = {
 export function GoogleMaps(props: GoogleMapsProps) {
   return (
     <div>
-      {/* <Wrapper apiKey={props.apiKey}> */}
+      {/* <Wrapper apiKey={props.apiKey}>  (uncomment for yext search bar)*/}
         <UnwrappedGoogleMaps {...props} />
       {/* </Wrapper> */}
     </div>
