@@ -343,6 +343,8 @@ const Location: Template<ExternalApiRenderData> = ({
             temp={document?.c_footwear}
             banner2={document?.c_bags}
             access={document?.c_accessories}
+            vac={document?.c_vacation}
+            off={document?.c_offers}
           />
           <Footer _site={_site} footer={_site?.c_footer} />
         </AnalyticsScopeProvider>
